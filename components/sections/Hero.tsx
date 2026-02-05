@@ -41,7 +41,7 @@ export default function Hero() {
                 The TrustLine Promise:
               </p>
               <p className="text-trust-blue/80 mt-2">
-                No shortcuts. No "creative" accounting. Just ironclad compliance.
+                No shortcuts. No "creative" accounting. Just clear and solid best practices.
               </p>
             </div>
 

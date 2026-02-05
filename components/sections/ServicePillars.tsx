@@ -30,7 +30,7 @@ const services = [
 
 export default function ServicePillars() {
   return (
-    <Section background="white" spacing="lg">
+    <Section id="practice-areas" background="white" spacing="lg">
       <Container size="xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

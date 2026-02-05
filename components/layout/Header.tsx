@@ -16,20 +16,47 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-display font-bold text-trust-blue">
+            <a
+              href="#top"
+              className="text-2xl font-display font-bold text-trust-blue hover:text-action-cyan transition-colors"
+              aria-label="Back to top"
+            >
               TrustLine Services
-            </h1>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a 
-              href="#" 
-              className="text-trust-blue opacity-60 cursor-not-allowed"
+              href="#who-we-serve"
+              className="text-sm font-medium text-trust-blue/80 hover:text-trust-blue transition-colors"
+            >
+              Who We Serve
+            </a>
+            <a 
+              href="#practice-areas"
+              className="text-sm font-medium text-trust-blue/80 hover:text-trust-blue transition-colors"
+            >
+              Practice Areas
+            </a>
+            <a 
+              href="#how-it-works"
+              className="text-sm font-medium text-trust-blue/80 hover:text-trust-blue transition-colors"
+            >
+              How It Works
+            </a>
+            <a 
+              href="#contact"
+              className="text-sm font-medium text-trust-blue/80 hover:text-trust-blue transition-colors"
+            >
+              Contact
+            </a>
+            <span 
+              className="text-trust-blue opacity-60 cursor-not-allowed text-sm"
               aria-disabled="true"
             >
               Client Portal <span className="text-xs">(Coming Soon)</span>
-            </a>
+            </span>
             <Button 
               variant="navy" 
               onClick={handleWhatsAppClick}
@@ -60,6 +87,34 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden pb-4 space-y-4">
+          <a 
+            href="#who-we-serve"
+            className="block text-trust-blue hover:text-action-cyan transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Who We Serve
+          </a>
+          <a 
+            href="#practice-areas"
+            className="block text-trust-blue hover:text-action-cyan transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Practice Areas
+          </a>
+          <a 
+            href="#how-it-works"
+            className="block text-trust-blue hover:text-action-cyan transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            How It Works
+          </a>
+          <a 
+            href="#contact"
+            className="block text-trust-blue hover:text-action-cyan transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Contact
+          </a>
             <a 
               href="#" 
               className="block text-trust-blue opacity-60 cursor-not-allowed"

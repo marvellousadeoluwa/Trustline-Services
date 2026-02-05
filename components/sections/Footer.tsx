@@ -14,7 +14,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-trust-blue text-white">
+    <footer id="contact" className="bg-trust-blue text-white">
       <Section background="white" spacing="md" className="!bg-trust-blue !py-16">
         <Container size="xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">

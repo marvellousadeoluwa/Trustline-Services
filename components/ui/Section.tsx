@@ -6,13 +6,15 @@ interface SectionProps {
   className?: string;
   background?: 'white' | 'sky' | 'gradient';
   spacing?: 'sm' | 'md' | 'lg';
+  id?: string;
 }
 
 export default function Section({ 
   children, 
   className,
   background = 'white',
-  spacing = 'lg'
+  spacing = 'lg',
+  id,
 }: SectionProps) {
   const backgrounds = {
     white: 'bg-white',
@@ -27,7 +29,7 @@ export default function Section({
   };
 
   return (
-    <section className={clsx(backgrounds[background], spacings[spacing], className)}>
+    <section id={id} className={clsx(backgrounds[background], spacings[spacing], className)}>
       {children}
     </section>
   );

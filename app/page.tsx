@@ -9,7 +9,7 @@ import WhatsAppFloat from '@/components/ui/WhatsAppFloat';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main id="top" className="min-h-screen">
       <Header />
       <Hero />
       <WhoWeServe />

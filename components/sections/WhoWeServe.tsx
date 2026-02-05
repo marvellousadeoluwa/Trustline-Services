@@ -34,7 +34,7 @@ const clientProfiles = [
 
 export default function WhoWeServe() {
   return (
-    <Section background="white" spacing="lg">
+    <Section id="who-we-serve" background="white" spacing="lg">
       <Container size="xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

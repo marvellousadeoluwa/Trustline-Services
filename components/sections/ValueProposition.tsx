@@ -25,7 +25,7 @@ const valueProps = [
 
 export default function ValueProposition() {
   return (
-    <Section background="sky" spacing="lg">
+    <Section id="value-proposition" background="sky" spacing="lg">
       <Container size="xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

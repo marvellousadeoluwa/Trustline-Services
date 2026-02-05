@@ -34,7 +34,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <Section background="sky" spacing="lg">
+    <Section id="how-it-works" background="sky" spacing="lg">
       <Container size="xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
