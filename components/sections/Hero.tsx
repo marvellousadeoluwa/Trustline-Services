@@ -48,7 +48,7 @@ export default function Hero() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                variant="cyan" 
+                variant="gold" 
                 onClick={handleWhatsAppClick}
                 className="text-lg px-8 py-4"
               >
@@ -56,7 +56,7 @@ export default function Hero() {
               </Button>
               <button
                 onClick={handleEmailClick}
-                className="text-trust-blue hover:text-action-cyan underline text-lg font-medium transition-colors"
+                className="text-trust-blue hover:text-brand-gold underline text-lg font-medium transition-colors"
               >
                 Or email us for a formal assessment
               </button>

@@ -24,7 +24,7 @@ export default function Footer() {
                 Get your finances on the right side of the law.
               </h2>
               <Button 
-                variant="cyan" 
+                variant="gold" 
                 onClick={handleWhatsAppClick}
                 className="text-lg px-8 py-4"
               >
@@ -39,7 +39,7 @@ export default function Footer() {
                   href="https://wa.me/2347066868867"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 hover:text-action-cyan transition-colors"
+                  className="flex items-center gap-3 hover:text-brand-gold transition-colors"
                 >
                   <span className="text-2xl">📞</span>
                   <div>
@@ -51,7 +51,7 @@ export default function Footer() {
                 <a
                   href="mailto:trustlineservicesng@gmail.com"
                   onClick={handleEmailClick}
-                  className="flex items-center gap-3 hover:text-action-cyan transition-colors"
+                  className="flex items-center gap-3 hover:text-brand-gold transition-colors"
                 >
                   <span className="text-2xl">📧</span>
                   <div>

@@ -12,7 +12,7 @@ const config: Config = {
         white: "#FFFFFF",
         "trust-blue": "#003366",
         "accent-sky": "#E6F0FA",
-        "action-cyan": "#00A3FF",
+        "brand-gold": "#C89A2B",
         "border-grey": "#D1D9E6",
       },
       fontFamily: {

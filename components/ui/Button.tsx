@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, ReactNode } from 'react';
 import clsx from 'clsx';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'navy' | 'cyan' | 'outline';
+  variant?: 'navy' | 'gold' | 'outline';
   children: ReactNode;
   className?: string;
 }
@@ -17,7 +17,7 @@ export default function Button({
   
   const variants = {
     navy: 'bg-trust-blue text-white hover:bg-opacity-90 focus:ring-trust-blue',
-    cyan: 'bg-action-cyan text-white hover:bg-opacity-90 focus:ring-action-cyan',
+    gold: 'bg-brand-gold text-white hover:bg-opacity-90 focus:ring-brand-gold',
     outline: 'border-2 border-trust-blue text-trust-blue hover:bg-trust-blue hover:text-white focus:ring-trust-blue',
   };
 

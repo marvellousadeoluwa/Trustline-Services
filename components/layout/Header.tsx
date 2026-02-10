@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
 
 export default function Header() {
@@ -15,13 +16,22 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center gap-3">
             <a
               href="#top"
-              className="text-2xl font-display font-bold text-trust-blue hover:text-action-cyan transition-colors"
+              className="flex items-center gap-3 group"
               aria-label="Back to top"
             >
-              Trustline Professional Services Ltd
+              <Image
+                src="/trustline-logo.png"
+                alt="Trustline Professional Services Ltd logo"
+                width={40}
+                height={40}
+                className="h-10 w-10"
+              />
+              <span className="text-2xl font-display font-bold text-trust-blue group-hover:text-brand-gold transition-colors">
+                Trustline Professional Services Ltd
+              </span>
             </a>
           </div>
 
@@ -89,28 +99,28 @@ export default function Header() {
           <div className="md:hidden pb-4 space-y-4">
           <a 
             href="#who-we-serve"
-            className="block text-trust-blue hover:text-action-cyan transition-colors"
+            className="block text-trust-blue hover:text-brand-gold transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Who We Serve
           </a>
           <a 
             href="#practice-areas"
-            className="block text-trust-blue hover:text-action-cyan transition-colors"
+            className="block text-trust-blue hover:text-brand-gold transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Practice Areas
           </a>
           <a 
             href="#how-it-works"
-            className="block text-trust-blue hover:text-action-cyan transition-colors"
+            className="block text-trust-blue hover:text-brand-gold transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             How It Works
           </a>
           <a 
             href="#contact"
-            className="block text-trust-blue hover:text-action-cyan transition-colors"
+            className="block text-trust-blue hover:text-brand-gold transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Contact

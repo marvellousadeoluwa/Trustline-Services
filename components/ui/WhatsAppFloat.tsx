@@ -9,7 +9,7 @@ export default function WhatsAppFloat() {
     <div className="fixed bottom-6 right-6 z-50 md:hidden">
       <button
         onClick={handleClick}
-        className="bg-action-cyan text-white rounded-full p-4 shadow-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-110"
+        className="bg-brand-gold text-white rounded-full p-4 shadow-lg hover:bg-opacity-90 transition-all duration-300 hover:scale-110"
         aria-label="Contact us on WhatsApp"
       >
         <svg
