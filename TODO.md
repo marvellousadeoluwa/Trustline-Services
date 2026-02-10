@@ -1,7 +1,7 @@
-# TrustLine Services - Development TODO List
+# Trustline Professional Services Ltd - Development TODO List
 
 ## Project Overview
-Building a premium, compliance-focused landing page for TrustLine Services - a tax and accounting services firm in Nigeria.
+Building a premium, compliance-focused landing page for Trustline Professional Services Ltd - a tax and accounting services firm in Nigeria.
 
 ---
 
@@ -64,7 +64,7 @@ Building a premium, compliance-focused landing page for TrustLine Services - a t
 ## 3. Landing Page Sections
 
 ### 3.1 Navigation Bar
-- [ ] Create Header component with logo (TrustLine Services)
+- [ ] Create Header component with logo (Trustline Professional Services Ltd)
 - [ ] Add "Client Portal (Coming Soon)" link (disabled state)
 - [ ] Implement "Get Compliant Now" button (Navy Blue, white text)
 - [ ] Make header sticky on mobile
@@ -75,7 +75,7 @@ Building a premium, compliance-focused landing page for TrustLine Services - a t
 - [ ] Create Hero component with split layout (left: text, right: image)
 - [ ] Implement headline: "Integrity in Accounting. Confidence in Compliance."
 - [ ] Add sub-headline text
-- [ ] Create "TrustLine Promise" section
+- [ ] Create "Trustline Promise" section
 - [ ] Build primary CTA: "Start a Conversation on WhatsApp" button (Action Cyan)
 - [ ] Add secondary CTA: "Email us for a formal assessment" link
 - [ ] Add subtle light blue gradient background
@@ -131,7 +131,7 @@ Building a premium, compliance-focused landing page for TrustLine Services - a t
   - [ ] WhatsApp: +234 706 686 8867 (with clickable link)
   - [ ] Email: trustlineservicesng@gmail.com
   - [ ] Location: Lagos, Nigeria
-- [ ] Add copyright notice: "© 2026 TrustLine Services. All Rights Reserved."
+- [ ] Add copyright notice: "© 2026 Trustline Professional Services Ltd. All Rights Reserved."
 - [ ] Add "Certified Compliance" seal design (Navy Blue wax seal style)
 - [ ] Add trust signals (SSL padlock, FIRS/CITN logos if applicable)
 

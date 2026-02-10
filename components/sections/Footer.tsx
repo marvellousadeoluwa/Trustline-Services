@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button';
 
 export default function Footer() {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/2347066868867?text=Hello%20TrustLine%20Services,%20I%20would%20like%20to%20get%20compliant.', '_blank');
+    window.open('https://wa.me/2347066868867?text=Hello%20Trustline%20Professional%20Services%20Ltd,%20I%20would%20like%20to%20get%20compliant.', '_blank');
   };
 
   const handleEmailClick = () => {
@@ -74,7 +74,7 @@ export default function Footer() {
           {/* Bottom Bar */}
           <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm opacity-80">
-              © 2026 TrustLine Services. All Rights Reserved.
+              © 2026 Trustline Professional Services Ltd. All Rights Reserved.
             </p>
             <div className="flex items-center gap-2">
               <span className="text-sm opacity-80">Certified Compliance</span>

@@ -2,7 +2,7 @@
 
 export default function WhatsAppFloat() {
   const handleClick = () => {
-    window.open('https://wa.me/2347066868867?text=Hello%20TrustLine%20Services,%20I%20would%20like%20to%20get%20compliant.', '_blank');
+    window.open('https://wa.me/2347066868867?text=Hello%20Trustline%20Professional%20Services%20Ltd,%20I%20would%20like%20to%20get%20compliant.', '_blank');
   };
 
   return (

@@ -7,7 +7,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/2347066868867?text=Hello%20TrustLine%20Services,%20I%20would%20like%20to%20get%20compliant.', '_blank');
+    window.open('https://wa.me/2347066868867?text=Hello%20Trustline%20Professional%20Services%20Ltd,%20I%20would%20like%20to%20get%20compliant.', '_blank');
   };
 
   return (
@@ -21,7 +21,7 @@ export default function Header() {
               className="text-2xl font-display font-bold text-trust-blue hover:text-action-cyan transition-colors"
               aria-label="Back to top"
             >
-              TrustLine Services
+              Trustline Professional Services Ltd
             </a>
           </div>
 
