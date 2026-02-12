@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import TrustlineLogo from '@/icon_1.png';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,11 +24,12 @@ export default function Header() {
               aria-label="Back to top"
             >
               <Image
-                src="/trustline-logo.png"
+                src={TrustlineLogo}
                 alt="Trustline Professional Services Ltd logo"
                 width={40}
                 height={40}
-                className="h-10 w-10"
+                className="h-10 w-10 object-contain"
+                priority
               />
               <span className="text-2xl font-display font-bold text-trust-blue group-hover:text-brand-gold transition-colors">
                 Trustline Professional Services Ltd

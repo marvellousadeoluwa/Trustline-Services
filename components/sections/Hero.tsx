@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+import WaitlistForm from '@/components/sections/WaitlistForm';
 
 export default function Hero() {
   const handleWhatsAppClick = () => {
@@ -29,7 +30,7 @@ export default function Hero() {
                 Integrity in Accounting.<br />
                 Confidence in Compliance.
               </h1>
-              
+
               <p className="text-lg md:text-xl text-trust-blue/80 leading-relaxed">
                 Tax filing in Nigeria is shifting. Regulatory enforcement is tightening. We help forward-thinking professionals and businesses navigate the landscape correctly—protecting your reputation and your assets.
               </p>
@@ -45,20 +46,26 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                variant="gold" 
+            {/* Primary CTA: Waitlist */}
+            <div className="space-y-3">
+              <p className="text-trust-blue font-medium">Be the first to know when we launch.</p>
+              <WaitlistForm />
+            </div>
+
+            {/* Secondary CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              <Button
+                variant="outline"
                 onClick={handleWhatsAppClick}
-                className="text-lg px-8 py-4"
+                className="text-base"
               >
-                Start a Conversation on WhatsApp
+                Chat on WhatsApp
               </Button>
               <button
                 onClick={handleEmailClick}
-                className="text-trust-blue hover:text-brand-gold underline text-lg font-medium transition-colors"
+                className="text-trust-blue hover:text-brand-gold underline text-base font-medium transition-colors"
               >
-                Or email us for a formal assessment
+                Email for a formal assessment
               </button>
             </div>
           </motion.div>
