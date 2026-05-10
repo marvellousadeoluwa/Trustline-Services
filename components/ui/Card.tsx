@@ -14,16 +14,18 @@ export default function Card({
   className,
   hover = true 
 }: CardProps) {
-  const baseStyles = 'rounded-lg p-6 transition-all duration-300';
+  const baseStyles = 'rounded-lg p-6 transition-all duration-300 border';
   
   const variants = {
-    default: 'bg-white border border-border-grey',
-    sky: 'bg-accent-sky border border-border-grey',
-    navy: 'bg-trust-blue text-white border border-trust-blue',
-    bordered: 'bg-white border-2 border-trust-blue',
+    default: 'bg-white border-border-grey hover:border-brand-gold',
+    sky: 'bg-accent-sky border-border-grey hover:border-brand-gold',
+    navy: 'bg-trust-blue text-white border-trust-blue hover:border-brand-gold',
+    bordered: 'bg-white border-2 border-trust-blue hover:border-brand-gold',
   };
 
-  const hoverStyles = hover ? 'hover:shadow-lg hover:-translate-y-1' : '';
+  const hoverStyles = hover 
+    ? 'hover:shadow-lg hover:-translate-y-1 hover:scale-102 cursor-pointer' 
+    : '';
 
   return (
     <div className={clsx(baseStyles, variants[variant], hoverStyles, className)}>

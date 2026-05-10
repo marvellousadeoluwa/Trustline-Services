@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
+import { staggerContainer, staggerItem } from '@/lib/animations';
 
 const valueProps = [
   {
@@ -42,29 +43,52 @@ export default function ValueProposition() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div
+          className="grid md:grid-cols-3 gap-8"
+          variants={staggerContainer(0.12)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {valueProps.map((prop, index) => (
             <motion.div
               key={prop.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              variants={staggerItem}
             >
-              <Card variant="default" className="h-full text-center">
-                <div className="space-y-4">
-                  <div className="text-4xl mb-4">{prop.icon}</div>
+              <Card variant="default" className="h-full hover:border-brand-gold relative overflow-hidden group">
+                {/* Animated background accent */}
+                <motion.div
+                  className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-brand-gold/5 opacity-0 blur-3xl group-hover:opacity-100 transition-opacity duration-300"
+                />
+
+                <motion.div
+                  className="space-y-4 relative z-10"
+                  whileHover={{ y: -5 }}
+                  transition={{ type: 'spring', stiffness: 200 }}
+                >
+                  {/* Icon Container - Animated */}
+                  <motion.div
+                    className="text-5xl inline-flex items-center justify-center w-16 h-16 rounded-lg bg-accent-sky"
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    {prop.icon}
+                  </motion.div>
+
+                  {/* Title */}
                   <h3 className="text-xl font-display font-semibold text-trust-blue">
                     {prop.title}
                   </h3>
+
+                  {/* Description */}
                   <p className="text-trust-blue/80">
                     {prop.description}
                   </p>
-                </div>
+                </motion.div>
               </Card>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </Section>
   );

@@ -55,59 +55,120 @@ export default function WaitlistForm() {
         {submitted ? (
           <motion.div
             key="success"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.95, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 200, damping: 20 }}
             className="rounded-xl border border-border-grey bg-white p-6 shadow-sm sm:p-8"
           >
             <div className="flex flex-col items-center gap-4 text-center">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-green-600">
-                <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-display font-semibold text-trust-blue">You're on the list</h3>
-                <p className="mt-1 text-trust-blue/80">We'll notify you when we launch.</p>
-              </div>
+              <motion.div
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ type: 'spring', stiffness: 150, delay: 0.1 }}
+                className="flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-green-600"
+              >
+                <motion.svg
+                  animate={{ rotate: [0, 10, -10, 10, 0] }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="h-8 w-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </motion.svg>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <h3 className="text-xl font-display font-semibold text-trust-blue">
+                  You're on the list
+                </h3>
+                <p className="mt-1 text-trust-blue/80">
+                  We'll notify you when we launch.
+                </p>
+              </motion.div>
             </div>
           </motion.div>
         ) : (
           <motion.form
             key="form"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             onSubmit={handleSubmit(onSubmit)}
             className="space-y-4"
           >
-            <div>
-              <Label htmlFor="waitlist-email" className="mb-2">
+            <motion.div whileHover={{ scale: 1.01 }}>
+              <Label
+                htmlFor="waitlist-email"
+                className="mb-2 block text-sm font-medium text-trust-blue"
+              >
                 Email address
               </Label>
-              <Input
-                id="waitlist-email"
-                type="email"
-                placeholder="you@example.com"
-                autoComplete="email"
-                error={Boolean(errors.email)}
-                {...register('email', {
-                  required: 'Email is required',
-                  pattern: {
-                    value: EMAIL_REGEX,
-                    message: 'Please enter a valid email address',
-                  },
-                })}
-              />
+              <motion.div
+                whileFocus={{ scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 200 }}
+              >
+                <Input
+                  id="waitlist-email"
+                  type="email"
+                  placeholder="you@example.com"
+                  autoComplete="email"
+                  error={Boolean(errors.email)}
+                  className={`transition-all duration-300 ${
+                    errors.email ? 'border-red-500 focus:border-red-600' : ''
+                  }`}
+                  {...register('email', {
+                    required: 'Email is required',
+                    pattern: {
+                      value: EMAIL_REGEX,
+                      message: 'Please enter a valid email address',
+                    },
+                  })}
+                />
+              </motion.div>
               {errors.email && (
-                <p className="mt-1.5 text-sm text-red-600" role="alert">
+                <motion.p
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-1.5 text-sm text-red-600"
+                  role="alert"
+                >
                   {errors.email.message}
-                </p>
+                </motion.p>
               )}
-            </div>
-            <Button type="submit" variant="gold" className="w-full sm:w-auto sm:min-w-[200px]" disabled={isSubmitting}>
-              {isSubmitting ? 'Joining…' : 'Join Waitlist'}
-            </Button>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Button
+                type="submit"
+                variant="gold"
+                className="w-full sm:w-auto sm:min-w-[200px]"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <motion.span
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                  >
+                    ⟳
+                  </motion.span>
+                ) : (
+                  'Join Waitlist'
+                )}
+              </Button>
+            </motion.div>
           </motion.form>
         )}
       </AnimatePresence>

@@ -23,6 +23,9 @@ const config: Config = {
         "section": "8rem", // 20% more whitespace
         "section-sm": "4rem",
       },
+      scale: {
+        "102": "1.02",
+      },
     },
   },
   plugins: [],

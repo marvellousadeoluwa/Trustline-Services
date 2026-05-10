@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
+import { staggerContainer, staggerItem } from '@/lib/animations';
 
 const clientProfiles = [
   {
@@ -48,18 +49,25 @@ export default function WhoWeServe() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {clientProfiles.map((profile, index) => (
+        <motion.div
+          className="grid md:grid-cols-2 gap-6"
+          variants={staggerContainer(0.12)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {clientProfiles.map((profile) => (
             <motion.div
               key={profile.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              variants={staggerItem}
             >
               <Card variant={profile.variant} className="h-full">
-                <div className="space-y-4">
-                  <h3 className="text-xl font-display font-semibold">
+                <motion.div 
+                  className="space-y-4"
+                  whileHover={{ y: -5 }}
+                  transition={{ type: 'spring', stiffness: 200 }}
+                >
+                  <h3 className="text-xl font-display font-semibold hover:text-brand-gold transition-colors">
                     {profile.title}
                   </h3>
                   <div className="space-y-2">
@@ -74,11 +82,11 @@ export default function WhoWeServe() {
                       {profile.focus}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </Card>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </Section>
   );

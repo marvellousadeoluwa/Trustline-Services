@@ -1,52 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+# Advanced CSS Animations & Utilities
+# Add these to app/globals.css for enhanced visual effects
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --primary-white: #FFFFFF;
-  --trust-blue: #003366;
-  --accent-sky: #E6F0FA;
-  --brand-gold: #C89A2B;
-  --border-grey: #D1D9E6;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  color: var(--trust-blue);
-  background-color: var(--primary-white);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lexend', sans-serif;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate(-50%, 1rem);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
+## Quick Copy-Paste CSS for globals.css
 
 /* ============= FLOATING & BOBBING ANIMATIONS ============= */
 @keyframes float {
@@ -267,6 +222,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -412,6 +378,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============= UTILITY CLASSES ============= */
+
+/* Quick utility classes for animations */
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -491,6 +459,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============= TRANSITION UTILITIES ============= */
+
 .transition-smooth {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -504,6 +473,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============= HOVER EFFECTS ============= */
+
 .hover-lift {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -546,6 +516,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============= FOCUS RING UTILITIES ============= */
+
 .focus-ring {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -569,13 +540,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============= BACKDROP ANIMATIONS ============= */
+
 @keyframes backdropBlur {
   from {
-    -webkit-backdrop-filter: blur(0px);
     backdrop-filter: blur(0px);
   }
   to {
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
 }
@@ -585,6 +555,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============= PERFORMANCE OPTIMIZATION ============= */
+
+/* Use will-change sparingly and remove after animation */
 .will-animate-transform {
   will-change: transform;
 }
@@ -593,108 +565,14 @@ h1, h2, h3, h4, h5, h6 {
   will-change: opacity;
 }
 
+/* GPU acceleration hint */
 .gpu-accelerated {
   transform: translateZ(0);
   backface-visibility: hidden;
 }
 
-/* ============= TEXT REVEAL & ADVANCED EFFECTS ============= */
-@keyframes textReveal {
-  0% {
-    opacity: 0;
-    clip-path: inset(0 100% 0 0);
-  }
-  100% {
-    opacity: 1;
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes typewriterCursor {
-  from,
-  to {
-    border-right-color: #C89A2B;
-  }
-  50% {
-    border-right-color: transparent;
-  }
-}
-
-@keyframes liquidSwipe {
-  0% {
-    clip-path: polygon(0% 100%, 0% 100%, 0% 100%, 0% 100%);
-  }
-  50% {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
-  100% {
-    clip-path: polygon(100% 0%, 100% 0%, 100% 0%, 100% 100%);
-  }
-}
-
-@keyframes wordBounce {
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-10px);
-    opacity: 0.9;
-  }
-}
-
-@keyframes letterSpacing {
-  0% {
-    letter-spacing: 0em;
-  }
-  100% {
-    letter-spacing: 0.05em;
-  }
-}
-
-/* Text reveal utility animations */
-.animate-text-reveal {
-  animation: textReveal 0.8s ease-out forwards;
-}
-
-.animate-liquid-swipe {
-  animation: liquidSwipe 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-}
-
-.animate-word-bounce {
-  animation: wordBounce 1.5s ease-in-out infinite;
-}
-
-.animate-letter-spacing-expand {
-  animation: letterSpacing 0.6s ease-out forwards;
-}
-
-/* ============= SCROLLBAR STYLING ============= */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #C89A2B;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #003366;
-}
-
-/* Firefox scrollbar with vendor prefixes and standard */
-* {
-  scrollbar-color: #C89A2B #f1f1f1;
-  scrollbar-width: thin;
-}
-
 /* ============= RESPONSIVE ANIMATION ADJUSTMENTS ============= */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -707,6 +585,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+  /* Reduce animation intensity on mobile */
   .animate-float {
     animation-duration: 4s;
   }
@@ -716,16 +595,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* ============= DARK MODE SUPPORT ============= */
+/* ============= DARK MODE SUPPORT (Optional) ============= */
+
 @media (prefers-color-scheme: dark) {
   .animate-glow {
     animation: glow 2s ease-in-out infinite;
     box-shadow: 0 0 20px rgba(200, 154, 43, 0.3);
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
   }
 }
