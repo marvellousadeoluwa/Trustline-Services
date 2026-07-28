@@ -5,6 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
+import {
+  CONTACT_EMAIL,
+  getWhatsAppUrl,
+  PHONE_DISPLAY,
+} from '@/lib/site';
 
 const socialLinks = [
   {
@@ -57,24 +62,29 @@ const socialLinks = [
   },
 ];
 
+const whatsappUrl = getWhatsAppUrl();
+
 const contactItems = [
   {
     icon: '📞',
     label: 'Direct Line (WhatsApp)',
-    value: '+234 706 686 8867',
-    href: 'https://wa.me/2347066868867',
+    value: PHONE_DISPLAY,
+    href: whatsappUrl,
+    external: true,
   },
   {
     icon: '📧',
     label: 'Official Mail',
-    value: 'trustlineservicesng@gmail.com',
-    href: 'mailto:trustlineservicesng@gmail.com',
+    value: CONTACT_EMAIL,
+    href: `mailto:${CONTACT_EMAIL}`,
+    external: false,
   },
   {
     icon: '📍',
     label: 'Headquarters',
     value: 'Lagos, Nigeria (Serving clients nationwide)',
     href: null,
+    external: false,
   },
 ];
 
@@ -127,11 +137,7 @@ export default function Footer() {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/2347066868867?text=Hello%20Trustline%20Professional%20Services%20Ltd,%20I%20would%20like%20to%20get%20compliant.', '_blank');
-  };
-
-  const handleEmailClick = () => {
-    window.location.href = 'mailto:trustlineservicesng@gmail.com';
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -173,36 +179,58 @@ export default function Footer() {
             {/* Right Side - Contact Info */}
             <motion.div className="space-y-6" variants={itemVariants}>
               <div className="space-y-4">
-                {contactItems.map((item, index) => (
-                  <motion.a
-                    key={index}
-                    href={item.href || '#'}
-                    target={item.href?.startsWith('http') ? '_blank' : undefined}
-                    rel={item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    onClick={item.href?.startsWith('mailto:') ? handleEmailClick : undefined}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
-                    viewport={{ once: true }}
-                    whileHover="hover"
-                    variants={linkVariants}
-                    className="flex items-center gap-3 group cursor-pointer"
-                  >
-                    <motion.span
-                      className="text-2xl"
-                      whileHover={{ scale: 1.2, rotate: 12 }}
-                      transition={{ type: 'spring', stiffness: 300 }}
+                {contactItems.map((item, index) => {
+                  const content = (
+                    <>
+                      <motion.span
+                        className="text-2xl"
+                        whileHover={{ scale: 1.2, rotate: 12 }}
+                        transition={{ type: 'spring', stiffness: 300 }}
+                      >
+                        {item.icon}
+                      </motion.span>
+                      <div className="overflow-hidden">
+                        <p className="text-sm text-white/85 transition-opacity group-hover:text-white">
+                          {item.label}
+                        </p>
+                        <p className="font-semibold text-white">{item.value}</p>
+                      </div>
+                    </>
+                  );
+
+                  if (!item.href) {
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
+                        viewport={{ once: true }}
+                        className="flex items-center gap-3"
+                      >
+                        {content}
+                      </motion.div>
+                    );
+                  }
+
+                  return (
+                    <motion.a
+                      key={index}
+                      href={item.href}
+                      target={item.external ? '_blank' : undefined}
+                      rel={item.external ? 'noopener noreferrer' : undefined}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
+                      viewport={{ once: true }}
+                      whileHover="hover"
+                      variants={linkVariants}
+                      className="flex items-center gap-3 group cursor-pointer rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-trust-blue"
                     >
-                      {item.icon}
-                    </motion.span>
-                    <div className="overflow-hidden">
-                      <p className="text-sm opacity-80 transition-opacity group-hover:opacity-100">
-                        {item.label}
-                      </p>
-                      <p className="font-semibold">{item.value}</p>
-                    </div>
-                  </motion.a>
-                ))}
+                      {content}
+                    </motion.a>
+                  );
+                })}
               </div>
 
               {/* Social Links */}
@@ -251,11 +279,21 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <p className="text-sm opacity-80">
+            <p className="text-sm text-white/85">
               © 2026 Trustline Professional Services Ltd. All Rights Reserved.
             </p>
-            <div className="flex items-center gap-2">
-              <span className="text-sm opacity-80">Certified Compliance</span>
+            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+              <span
+                className="inline-flex items-center gap-2 text-sm text-white/80"
+                aria-disabled="true"
+              >
+                Client Portal
+                <span className="rounded-full border border-white/20 bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white/70">
+                  Soon
+                </span>
+              </span>
+              <div className="flex items-center gap-2">
+              <span className="text-sm text-white/85">Certified Compliance</span>
               <motion.div
                 className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center"
                 animate={{ scale: [1, 1.1, 1] }}
@@ -263,6 +301,7 @@ export default function Footer() {
               >
                 <span className="text-xs">✓</span>
               </motion.div>
+              </div>
             </div>
           </motion.div>
         </Container>

@@ -80,7 +80,7 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
         }}
         className="h-full"
       >
-        <Card variant="default" className="h-full relative overflow-hidden group">
+        <Card variant="default" className="h-full relative overflow-hidden group transition-all duration-300 hover:shadow-xl hover:border-brand-gold">
           {/* Animated left border accent */}
           <motion.div
             className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-gold to-trust-blue"

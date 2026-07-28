@@ -61,23 +61,32 @@ export default function WhoWeServe() {
               key={profile.title}
               variants={staggerItem}
             >
-              <Card variant={profile.variant} className="h-full">
-                <motion.div 
+              <Card
+                variant={profile.variant}
+                className="h-full group/card transition-all duration-300 hover:shadow-xl hover:border-brand-gold focus-within:ring-2 focus-within:ring-brand-gold/40"
+              >
+                <motion.div
                   className="space-y-4"
-                  whileHover={{ y: -5 }}
+                  whileHover={{ y: -6 }}
                   transition={{ type: 'spring', stiffness: 200 }}
                 >
-                  <h3 className="text-xl font-display font-semibold hover:text-brand-gold transition-colors">
+                  <h3 className="text-xl font-display font-semibold text-trust-blue group-hover/card:text-brand-gold transition-colors duration-300">
                     {profile.title}
                   </h3>
                   <div className="space-y-2">
                     <p className="font-medium">
-                      <span className="text-trust-blue/80">Who You Are:</span>
+                      <span className={profile.variant === 'navy' ? 'text-white/85' : 'text-trust-blue/90'}>
+                        Who You Are:
+                      </span>
                       <br />
                       {profile.description}
                     </p>
                     <p>
-                      <span className="text-trust-blue/80 font-medium">Our Focus:</span>
+                      <span
+                        className={`font-medium ${profile.variant === 'navy' ? 'text-white/85' : 'text-trust-blue/90'}`}
+                      >
+                        Our Focus:
+                      </span>
                       <br />
                       {profile.focus}
                     </p>
