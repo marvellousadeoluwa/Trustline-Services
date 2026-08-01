@@ -74,14 +74,14 @@ export default function Hero() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-trust-blue leading-tight">
                 Tax Advisory. HR Architecture.
                 <br />
-                <motion.span
-                  className="inline-block bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent"
-                  style={{ backgroundSize: '200% 100%' }}
-                  animate={{ backgroundPosition: ['0% 0%', '100% 0%', '0% 0%'] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  Strategic Talent Acquisition.
-                </motion.span>
+                <span className="typewriter inline-block border-r-2 border-trust-blue pr-1">
+                  <span
+                    className="inline-block bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent"
+                    style={{ backgroundSize: '200% 100%' }}
+                  >
+                    Strategic Talent Acquisition.
+                  </span>
+                </span>
               </h1>
 
               <p className="text-lg md:text-xl text-trust-blue/90 leading-relaxed max-w-lg">

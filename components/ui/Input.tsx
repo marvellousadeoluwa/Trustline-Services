@@ -1,10 +1,10 @@
 'use client';
 
-import { InputHTMLAttributes, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import clsx from 'clsx';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends Omit<HTMLMotionProps<'input'>, 'ref'> {
   error?: boolean;
   errorMessage?: string;
 }

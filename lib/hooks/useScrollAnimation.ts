@@ -11,7 +11,7 @@ import { useInView } from 'framer-motion';
  * Useful for triggering animations on scroll
  */
 export const useScrollAnimation = () => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return { ref, isInView };
@@ -43,7 +43,7 @@ export const useScrollProgress = () => {
  * Useful for triggering animations multiple times
  */
 export const useElementVisibility = () => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -66,7 +66,7 @@ export const useElementVisibility = () => {
  * Hook for parallax scroll effect
  */
 export const useParallax = (offset = 50) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement | null>(null);
   const [y, setY] = useState(0);
 
   useEffect(() => {
