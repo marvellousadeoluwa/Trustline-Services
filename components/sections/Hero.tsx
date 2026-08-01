@@ -72,7 +72,7 @@ export default function Hero() {
           <div className="space-y-8">
             <motion.div className="space-y-6" variants={heroItem}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-trust-blue leading-tight">
-                Integrity in Accounting.
+                Tax Advisory. HR Architecture.
                 <br />
                 <motion.span
                   className="inline-block bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent"
@@ -80,15 +80,16 @@ export default function Hero() {
                   animate={{ backgroundPosition: ['0% 0%', '100% 0%', '0% 0%'] }}
                   transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
                 >
-                  Confidence in Compliance.
+                  Strategic Talent Acquisition.
                 </motion.span>
               </h1>
 
               <p className="text-lg md:text-xl text-trust-blue/90 leading-relaxed max-w-lg">
-                Tax filing in Nigeria is shifting. Regulatory enforcement is
-                tightening. We help forward-thinking professionals and
-                businesses navigate the landscape correctly—protecting your
-                reputation and your assets.
+                Nigeria's regulatory and business landscapes are evolving rapidly.
+                From tightening tax enforcement to talent retention and workforce
+                governance, scaling requires absolute precision. We build the
+                financial, HR, and talent infrastructure that protects your
+                company, recruits top-tier professionals, and guarantees compliance.
               </p>
             </motion.div>
 
@@ -98,8 +99,8 @@ export default function Hero() {
             >
               <p className="text-trust-blue font-semibold text-lg">The Trustline Promise:</p>
               <p className="text-trust-blue/90 mt-2">
-                No shortcuts. No &quot;creative&quot; accounting. Just clear and solid
-                best practices.
+                No shortcuts. No &quot;creative&quot; accounting. No paper-only HR.
+                Rigorous talent placement and legal compliance built to withstand scrutiny.
               </p>
             </motion.div>
 
@@ -121,7 +122,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                View Practice Areas
+                Explore Practice Areas
               </motion.a>
             </motion.div>
           </div>

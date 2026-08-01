@@ -283,25 +283,15 @@ export default function Footer() {
               © 2026 Trustline Professional Services Ltd. All Rights Reserved.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-              <span
-                className="inline-flex items-center gap-2 text-sm text-white/80"
-                aria-disabled="true"
+              <a
+                href="https://hrcenter.trustlineprofessional.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-white/90 underline-offset-4 hover:text-brand-gold hover:underline"
               >
-                Client Portal
-                <span className="rounded-full border border-white/20 bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white/70">
-                  Soon
-                </span>
-              </span>
-              <div className="flex items-center gap-2">
-              <span className="text-sm text-white/85">Certified Compliance</span>
-              <motion.div
-                className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center"
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <span className="text-xs">✓</span>
-              </motion.div>
-              </div>
+                HR Center
+              </a>
+              <span className="text-sm text-white/80">Certified Compliance</span>
             </div>
           </motion.div>
         </Container>

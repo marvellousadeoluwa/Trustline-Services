@@ -82,14 +82,6 @@ export default function HowItWorks() {
                     <p className="text-sm leading-relaxed text-trust-blue/90">{step.description}</p>
                   </div>
                 </div>
-                {index < steps.length - 1 && (
-                  <span
-                    className="pointer-events-none absolute -bottom-5 left-7 hidden text-brand-gold lg:hidden"
-                    aria-hidden="true"
-                  >
-                    ↓
-                  </span>
-                )}
               </article>
             </motion.li>
           ))}
@@ -109,7 +101,7 @@ export default function HowItWorks() {
             rel="noopener noreferrer"
             className="inline-block rounded-lg bg-trust-blue px-8 py-3 font-semibold text-white shadow-md transition-all duration-300 hover:bg-trust-blue/90 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-trust-blue focus:ring-offset-2"
           >
-            Start Your Journey →
+            Start Your Journey
           </a>
         </motion.div>
       </Container>

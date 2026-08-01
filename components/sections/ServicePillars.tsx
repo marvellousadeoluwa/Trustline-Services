@@ -10,23 +10,40 @@ import { staggerContainer, staggerItem } from '@/lib/animations';
 const services = [
   {
     number: '01',
-    title: 'Personal Income Tax & TCC',
-    description: 'End-to-end handling of annual returns, proper income disclosure, and procurement of valid Tax Clearance Certificates (TCC) for travel or business needs.',
+    title: 'People & Payroll Compliance',
+    description: 'PAYE, Pension, NHF, NSITF, and ITF—remitted and provable for every workforce segment.',
+    anchorId: 'people-payroll-compliance',
   },
   {
     number: '02',
-    title: 'SME & Corporate Tax Support',
-    description: 'Comprehensive support including PAYE setup, VAT filing, Withholding Tax (WHT) management, and monthly compliance checks.',
+    title: 'HR Architecture & Design',
+    description: 'Grade structures, pay bands, contracts, and policy frameworks built to align with your culture.',
+    anchorId: 'hr-architecture',
   },
   {
     number: '03',
-    title: 'Historical Remediation (Back-Taxes)',
-    description: 'Have you missed previous years? We review outstanding liabilities and negotiate proper regularization with tax authorities to clear your slate.',
+    title: 'Executive Search & Talent Acquisition',
+    description:
+      'End-to-end recruitment, vetting, and onboarding of finance, tax, HR, and managerial professionals aligned with your organizational culture.',
+    anchorId: 'recruitment',
   },
   {
     number: '04',
-    title: 'Strategic Advisory',
-    description: 'Clear, jargon-free guidance on what the Nigerian law requires of you today, and how to prepare for tomorrow.',
+    title: 'People Shield™',
+    description: 'Continuous compliance monitoring, risk flagging, and quarterly reporting for workforce governance.',
+    anchorId: 'people-shield',
+  },
+  {
+    number: '05',
+    title: 'Compensation & Reward Advisory',
+    description: 'Market benchmarking, salary structuring, and pay-band optimization to retain top talent.',
+    anchorId: 'compensation-reward-advisory',
+  },
+  {
+    number: '06',
+    title: 'Tax Compliance & Advisory',
+    description: 'Personal Income Tax, corporate filings (VAT, WHT, CIT), and remediation for full regulatory coverage.',
+    anchorId: 'tax-compliance-advisory',
   },
 ];
 
@@ -53,6 +70,7 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
 
   return (
     <motion.div
+      id={service.anchorId}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
