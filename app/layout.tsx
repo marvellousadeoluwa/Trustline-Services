@@ -71,7 +71,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="prefetch" href="/" />
       </head>
-      <body className="overflow-x-hidden antialiased">
+      <body suppressHydrationWarning className="overflow-x-hidden antialiased">
         <ScrollProgressBar />
         {children}
         <Analytics />

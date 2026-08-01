@@ -71,16 +71,18 @@ export default function Hero() {
         >
           <div className="space-y-8">
             <motion.div className="space-y-6" variants={heroItem}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-trust-blue leading-tight">
-                Tax Advisory. HR Architecture.
-                <br />
-                <span className="typewriter inline-block border-r-2 border-trust-blue pr-1">
-                  <span
-                    className="inline-block bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent"
-                    style={{ backgroundSize: '200% 100%' }}
-                  >
-                    Strategic Talent Acquisition.
-                  </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight">
+                <span className="block bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent">
+                  Tax Advisory.
+                </span>
+                <span className="block bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent">
+                  HR Architecture.
+                </span>
+                <span className="block bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent">
+                  Strategic Talent
+                </span>
+                <span className="typewriter block border-r-2 border-trust-blue pr-1 bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent">
+                  Acquisition.
                 </span>
               </h1>
 
