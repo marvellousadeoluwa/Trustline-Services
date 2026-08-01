@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, HTMLMotionProps } from 'framer-motion';
+import { InputHTMLAttributes, useState } from 'react';
+import { motion } from 'framer-motion';
 import clsx from 'clsx';
 
-interface InputProps extends Omit<HTMLMotionProps<'input'>, 'ref'> {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;
   errorMessage?: string;
 }
@@ -30,8 +30,18 @@ export default function Input({
   };
 
   return (
-    <div className="relative w-full">
-      <motion.input
+    <motion.div
+      className="relative w-full"
+      animate={{
+        boxShadow: error
+          ? '0 0 0 3px rgba(239, 68, 68, 0.1)'
+          : isFocused
+          ? '0 0 0 3px rgba(200, 154, 43, 0.1)'
+          : 'none',
+      }}
+      transition={{ duration: 0.2 }}
+    >
+      <input
         className={clsx(
           'w-full rounded-lg border bg-white px-4 py-3 text-trust-blue placeholder:text-trust-blue/50',
           'focus:outline-none focus:ring-2 focus:ring-offset-0',
@@ -45,14 +55,6 @@ export default function Input({
         )}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        animate={{
-          boxShadow: error
-            ? '0 0 0 3px rgba(239, 68, 68, 0.1)'
-            : isFocused
-            ? '0 0 0 3px rgba(200, 154, 43, 0.1)'
-            : 'none',
-        }}
-        transition={{ duration: 0.2 }}
         {...props}
       />
       
@@ -89,6 +91,6 @@ export default function Input({
           {errorMessage}
         </motion.p>
       )}
-    </div>
+    </motion.div>
   );
 }
