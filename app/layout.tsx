@@ -2,21 +2,22 @@ import type { Metadata, Viewport } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import ScrollProgressBar from '@/components/ui/ScrollProgressBar';
+import CookieConsent from '@/components/ui/CookieConsent';
+import GlassFilter from '@/components/ui/GlassFilter';
 import { SITE_NAME, SITE_URL } from '@/lib/site';
 
-const defaultTitle =
-  'Trustline Professional Services Ltd - Integrity in Accounting. Confidence in Compliance.';
+const defaultTitle = 'Trustline – People Infrastructure for Nigerian SMEs';
 const defaultDescription =
-  'Tax filing in Nigeria is shifting. Regulatory enforcement is tightening. We help forward-thinking professionals and businesses navigate the landscape correctly—protecting your reputation and your assets.';
+  'HR architecture, payroll compliance, talent acquisition, and tax advisory for growth-stage Nigerian businesses. Built right. Built to withstand scrutiny.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: defaultTitle,
   description: defaultDescription,
   keywords:
-    'tax services Nigeria, tax compliance, TCC processing, corporate tax, PAYE, VAT, tax filing Lagos',
+    'HR consulting Nigeria, payroll compliance Lagos, PAYE compliance, HR outsourcing Nigeria, compensation benchmarking Nigeria, executive search Lagos, workforce governance, People Shield, tax compliance Nigeria',
   openGraph: {
-    title: defaultTitle,
+    title: 'Trustline Professional Services – People Infrastructure for Nigerian SMEs',
     description: defaultDescription,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -24,18 +25,18 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
-        width: 512,
-        height: 512,
-        alt: `${SITE_NAME} logo`,
+        url: '/og-image-1200x630.png',
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} social card`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: defaultTitle,
+    title: 'Trustline Professional Services – People Infrastructure for Nigerian SMEs',
     description: defaultDescription,
-    images: ['/og-image.png'],
+    images: ['/og-image-1200x630.png'],
   },
   icons: {
     icon: '/trustline-logo.png',
@@ -72,8 +73,10 @@ export default function RootLayout({
         <link rel="prefetch" href="/" />
       </head>
       <body suppressHydrationWarning className="overflow-x-hidden antialiased">
+        <GlassFilter />
         <ScrollProgressBar />
         {children}
+        <CookieConsent />
         <Analytics />
       </body>
     </html>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
+import GlassOverlay from '@/components/ui/GlassOverlay';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 
 const valueProps = [
@@ -55,10 +56,11 @@ export default function ValueProposition() {
               key={prop.title}
               variants={staggerItem}
             >
-              <Card variant="default" className="h-full hover:border-brand-gold relative overflow-hidden group">
+              <div className="h-full rounded-2xl border border-white/80 p-6 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:border-brand-gold">
+                <GlassOverlay variant="frosted" withRefraction={true} />
                 {/* Animated background accent */}
                 <motion.div
-                  className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-brand-gold/5 opacity-0 blur-3xl group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-brand-gold/15 opacity-0 blur-3xl group-hover:opacity-100 transition-opacity duration-300"
                 />
 
                 <motion.div
@@ -85,7 +87,7 @@ export default function ValueProposition() {
                     {prop.description}
                   </p>
                 </motion.div>
-              </Card>
+              </div>
             </motion.div>
           ))}
         </motion.div>

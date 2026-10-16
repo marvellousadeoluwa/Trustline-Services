@@ -1,28 +1,46 @@
-# Trustline Professional Services Ltd
+# Trustline Platform
 
-Landing page for Trustline Professional Services Ltd — tax and accounting in Nigeria. Goal: instant authority; address the pain point (fear of penalty) with the solution (correctness).
+The complete web application and landing page for Trustline Professional Services Ltd.
 
-## What’s included
+## Project Structure
 
-- **Landing page**: Hero, Who We Serve, Value Proposition, Practice Areas, How It Works, Footer
-- **Waitlist**: Hero CTA with email signup; emails stored in Supabase
-- **Admin dashboard** at `/admin`: password-protected view of signups, total count, Export to CSV
+This project is built with Next.js App Router and separates the marketing site from the application logic:
+- `app/(marketing)` - Public pages like Home, About, Insights, etc.
+- `app/(app)` - Logged-in application pages and admin dashboard.
 
-## Quick start
+## 🚀 Quick Start (Local Development)
 
+You can get the project up and running in under 15 minutes!
+
+### 1. Install Dependencies
 ```bash
 npm install
-npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+### 2. Set Up Environment Variables
+Ask a team member for the local development credentials or copy the example file:
+```bash
+cp .env.example .env.local
+```
+Ensure your `.env.local` contains the `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`.
 
-### Waitlist + Admin
+### 3. Run the Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-1. Copy `.env.example` to `.env.local`.
-2. Create a [Supabase](https://supabase.com) project, run `supabase/migrations/001_waitlist.sql` in the SQL Editor.
-3. Set in `.env.local`:
-   - `NEXT_PUBLIC_SUPABASE_URL` — project URL
-   - `SUPABASE_SERVICE_ROLE_KEY` — service role key
-   - `ADMIN_PASSWORD` — password for `/admin`
-4. Restart the dev server. Use the waitlist on the home page; open `/admin` to view and export signups.
+## 🗄️ Database (Supabase)
+
+We use Supabase for our database. 
+- **Local Dev:** Connects to the development Supabase project (keys in `.env.local`).
+- **Migrations:** If you need to set up the database schema, run the SQL scripts found in `supabase/migrations/` in the Supabase SQL Editor.
+
+## 🚀 Deployments & Environments
+
+We use **Vercel** for hosting, which provides seamless environments directly from GitHub:
+
+1. **Production:** Any merge to the `main` branch automatically deploys to Production. (Uses Vercel Production Environment Variables)
+2. **Staging (Preview):** Any push or pull request to a non-main branch triggers a Preview Deployment. This gives you a unique staging URL to test changes safely. (Uses Vercel Preview Environment Variables).
+
+*Note: Staging and Production databases are entirely separate. Staging points to a test database so production data is never at risk.*

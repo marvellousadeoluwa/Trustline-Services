@@ -5,6 +5,7 @@
 
 import { motion, Variants } from 'framer-motion';
 import { ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 import {
   fadeInUp,
   cardHover,
@@ -72,7 +73,7 @@ export default function AnimatedCard({
       viewport={VIEWPORT_ONCE}
       whileHover={hoverEffect && hoverable ? { scale: 1.02 } : undefined}
       transition={{ type: 'spring', stiffness: 100 }}
-      className={className}
+      className={twMerge(className)}
     >
       {children}
     </motion.div>

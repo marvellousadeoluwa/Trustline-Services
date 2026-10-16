@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion';
 
 const metrics = [
-  { label: 'Tax status', value: 'Cleared', healthy: true },
-  { label: 'TCC status', value: 'Valid', healthy: true },
-  { label: 'Compliance score', value: '100%', healthy: true },
-  { label: 'Next filing', value: 'On track', healthy: true },
+  { label: 'PAYE remittance', value: 'Current', healthy: true },
+  { label: 'Pension & NHF', value: 'Remitted', healthy: true },
+  { label: 'Contracts on file', value: '100%', healthy: true },
+  { label: 'Next statutory filing', value: 'On track', healthy: true },
 ];
 
 function StatusDot({ active }: { active: boolean }) {
@@ -28,6 +28,8 @@ function StatusDot({ active }: { active: boolean }) {
   );
 }
 
+import GlassOverlay from '@/components/ui/GlassOverlay';
+
 export default function ComplianceHealthCard() {
   return (
     <motion.div
@@ -36,26 +38,30 @@ export default function ComplianceHealthCard() {
       className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto"
     >
       <div
-        className="relative overflow-hidden rounded-2xl border border-white/60 bg-white/35 p-6 shadow-2xl backdrop-blur-xl"
+        className="relative overflow-hidden rounded-3xl border border-white/80 p-7 shadow-[0_20px_50px_rgba(0,51,102,0.18)]"
         role="region"
         aria-label="Compliance health overview"
       >
-        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-brand-gold/25 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-trust-blue/20 blur-3xl" />
+        {/* Physical Refractive Glass Layer (SVG feTurbulence + feDisplacementMap) */}
+        <GlassOverlay variant="light" withRefraction={true} />
+
+        {/* Dynamic ambient background glow orbs behind glass */}
+        <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-brand-gold/30 blur-3xl animate-pulse" />
+        <div className="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-trust-blue/25 blur-3xl" />
 
         <div className="relative z-10 space-y-5">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-trust-blue/70">
-                Live overview
+                What People Shield™ clients see
               </p>
               <h2 className="text-xl font-display font-bold text-trust-blue">
-                Compliance Health
+                Workforce Compliance Health
               </h2>
             </div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200/80 bg-emerald-50/90 px-3 py-1 text-xs font-semibold text-emerald-800">
-              <StatusDot active />
-              All systems nominal
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/80 bg-emerald-50/90 px-3 py-1 text-xs font-semibold text-emerald-800 shadow-sm backdrop-blur-md">
+              <StatusDot active={true} />
+              Product preview
             </span>
           </div>
 
@@ -67,30 +73,24 @@ export default function ComplianceHealthCard() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="flex items-center justify-between rounded-xl border border-white/50 bg-white/50 px-4 py-3"
+                className="relative overflow-hidden flex items-center justify-between rounded-xl border border-white/70 bg-white/50 px-4 py-3 shadow-[0_4px_16px_rgba(0,51,102,0.04)] backdrop-blur-md transition-all duration-300 hover:border-brand-gold/50 hover:bg-white/60"
               >
-                <div className="flex items-center gap-3">
+                {/* Micro frosted glass light sheen */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/50 via-white/10 to-transparent" />
+                
+                <div className="relative z-10 flex items-center gap-3">
                   <StatusDot active={metric.healthy} />
                   <span className="text-sm font-medium text-trust-blue">{metric.label}</span>
                 </div>
-                <span className="text-sm font-semibold text-trust-blue">{metric.value}</span>
+                <span className="relative z-10 text-sm font-semibold text-trust-blue">{metric.value}</span>
               </motion.li>
             ))}
           </ul>
 
           <div className="space-y-2">
             <div className="flex justify-between text-xs font-medium text-trust-blue/70">
-              <span>Annual readiness</span>
-              <span>100%</span>
-            </div>
-            <div className="h-2 overflow-hidden rounded-full bg-trust-blue/15">
-              <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-emerald-500 via-brand-gold to-trust-blue"
-                initial={{ width: 0 }}
-                whileInView={{ width: '100%' }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.2, ease: 'easeOut' }}
-              />
+              <span>Quarterly board-ready reporting</span>
+              <span className="font-semibold text-trust-blue">Included</span>
             </div>
           </div>
         </div>

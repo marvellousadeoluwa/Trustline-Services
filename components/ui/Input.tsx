@@ -2,21 +2,33 @@
 
 import { InputHTMLAttributes, useState } from 'react';
 import { motion } from 'framer-motion';
-import clsx from 'clsx';
+import { AlertCircle } from 'lucide-react';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { twMerge } from 'tailwind-merge';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+const inputStyles = cva('w-full rounded-lg bg-white px-4 py-3 text-trust-blue placeholder:text-trust-blue/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-0', {
+  variants: {
+    intent: {
+      normal: 'border-border-grey focus:ring-brand-gold',
+      error: 'border-red-500 focus:ring-red-500',
+    },
+    inputSize: {
+      md: '',
+      sm: 'py-2 px-3 text-sm',
+    },
+  },
+  defaultVariants: {
+    intent: 'normal',
+    inputSize: 'md',
+  },
+});
+
+interface InputProps extends InputHTMLAttributes<HTMLInputElement>, VariantProps<typeof inputStyles> {
   error?: boolean;
   errorMessage?: string;
 }
 
-export default function Input({ 
-  className, 
-  error, 
-  errorMessage,
-  onFocus,
-  onBlur,
-  ...props 
-}: InputProps) {
+export default function Input({ className, intent, inputSize, error, errorMessage, onFocus, onBlur, ...props }: InputProps) {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -29,57 +41,37 @@ export default function Input({
     onBlur?.(e);
   };
 
+  const computedIntent = error ? 'error' : intent ?? 'normal';
+
   return (
     <motion.div
       className="relative w-full"
       animate={{
         boxShadow: error
-          ? '0 0 0 3px rgba(239, 68, 68, 0.1)'
+          ? '0 0 0 3px rgba(239, 68, 68, 0.06)'
           : isFocused
-          ? '0 0 0 3px rgba(200, 154, 43, 0.1)'
+          ? '0 0 0 3px rgba(200, 154, 43, 0.06)'
           : 'none',
       }}
       transition={{ duration: 0.2 }}
     >
       <input
-        className={clsx(
-          'w-full rounded-lg border bg-white px-4 py-3 text-trust-blue placeholder:text-trust-blue/50',
-          'focus:outline-none focus:ring-2 focus:ring-offset-0',
-          'transition-all duration-300',
-          error
-            ? 'border-red-500 focus:ring-red-500'
-            : isFocused
-            ? 'border-brand-gold focus:ring-brand-gold'
-            : 'border-border-grey focus:ring-brand-gold',
-          className
-        )}
+        className={twMerge(inputStyles({ intent: computedIntent, inputSize }), className)}
         onFocus={handleFocus}
         onBlur={handleBlur}
         {...props}
       />
-      
-      {/* Error state indicator - animated border pulse */}
+
       {error && (
         <motion.div
           className="absolute right-3 top-1/2 -translate-y-1/2"
-          animate={{ scale: [1, 1.1, 1] }}
+          animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 0.6, repeat: Infinity }}
         >
-          <svg
-            className="w-5 h-5 text-red-500"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              fillRule="evenodd"
-              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-              clipRule="evenodd"
-            />
-          </svg>
+          <AlertCircle className="w-5 h-5 text-red-500" />
         </motion.div>
       )}
 
-      {/* Error message with slide-in animation */}
       {error && errorMessage && (
         <motion.p
           className="mt-1 text-sm text-red-500 font-medium"
@@ -94,3 +86,6 @@ export default function Input({
     </motion.div>
   );
 }
+
+export { Input };
+

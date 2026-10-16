@@ -5,45 +5,46 @@ import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
+import GlassOverlay from '@/components/ui/GlassOverlay';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 
 const services = [
   {
     number: '01',
-    title: 'People & Payroll Compliance',
-    description: 'PAYE, Pension, NHF, NSITF, and ITF—remitted and provable for every workforce segment.',
-    anchorId: 'people-payroll-compliance',
+    title: 'HR & Compliance Diagnostics',
+    description:
+      'A structured audit of payroll, remittances, contracts, policies and pay structure—delivered as a scored report with a prioritised remediation plan.',
+    anchorId: 'diagnostics',
   },
   {
     number: '02',
     title: 'HR Architecture & Design',
-    description: 'Grade structures, pay bands, contracts, and policy frameworks built to align with your culture.',
+    description: 'Grade structures, pay bands, employment contracts, handbooks and policy frameworks engineered to fit your culture.',
     anchorId: 'hr-architecture',
   },
   {
     number: '03',
-    title: 'Executive Search & Talent Acquisition',
-    description:
-      'End-to-end recruitment, vetting, and onboarding of finance, tax, HR, and managerial professionals aligned with your organizational culture.',
-    anchorId: 'recruitment',
-  },
-  {
-    number: '04',
-    title: 'People Shield™',
-    description: 'Continuous compliance monitoring, risk flagging, and quarterly reporting for workforce governance.',
-    anchorId: 'people-shield',
-  },
-  {
-    number: '05',
     title: 'Compensation & Reward Advisory',
-    description: 'Market benchmarking, salary structuring, and pay-band optimization to retain top talent.',
+    description: 'Market benchmarking, salary structuring and pay-band optimisation to retain your best people.',
     anchorId: 'compensation-reward-advisory',
   },
   {
+    number: '04',
+    title: 'Executive Search & Talent Acquisition',
+    description: 'End-to-end recruitment, vetting and onboarding of finance, HR and managerial professionals.',
+    anchorId: 'recruitment',
+  },
+  {
+    number: '05',
+    title: 'People Shield™',
+    description: 'Continuous compliance monitoring, risk flagging and quarterly board-ready reporting.',
+    anchorId: 'people-shield',
+  },
+  {
     number: '06',
-    title: 'Tax Compliance & Advisory',
-    description: 'Personal Income Tax, corporate filings (VAT, WHT, CIT), and remediation for full regulatory coverage.',
-    anchorId: 'tax-compliance-advisory',
+    title: 'Payroll & Tax Compliance',
+    description: 'PAYE, Pension, NHF, NSITF, ITF and tax advisory—computed correctly, remitted on time and provable.',
+    anchorId: 'payroll-tax-compliance',
   },
 ];
 
@@ -98,10 +99,11 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
         }}
         className="h-full"
       >
-        <Card variant="default" className="h-full relative overflow-hidden group transition-all duration-300 hover:shadow-xl hover:border-brand-gold">
+        <div className="h-full rounded-2xl border border-white/80 p-6 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:border-brand-gold">
+          <GlassOverlay variant="light" withRefraction={true} />
           {/* Animated left border accent */}
           <motion.div
-            className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-gold to-trust-blue"
+            className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-brand-gold to-trust-blue"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             transition={{ duration: 0.6 }}
@@ -162,7 +164,7 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
               </motion.p>
             </div>
           </div>
-        </Card>
+        </div>
       </motion.div>
     </motion.div>
   );
@@ -180,7 +182,7 @@ export default function ServicePillars() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold text-trust-blue mb-4">
-            Our Core Practice Areas
+            How We Work: Diagnose. Build. Protect.
           </h2>
         </motion.div>
 

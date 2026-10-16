@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import ComplianceHealthCard from '@/components/sections/ComplianceHealthCard';
+import GlassOverlay from '@/components/ui/GlassOverlay';
 import {
   staggerContainer,
   heroItem,
@@ -72,39 +73,33 @@ export default function Hero() {
           <div className="space-y-8">
             <motion.div className="space-y-6" variants={heroItem}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight">
-                <span className="block bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent">
-                  Tax Advisory.
-                </span>
-                <span className="block bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent">
-                  HR Architecture.
-                </span>
-                <span className="block bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent">
-                  Strategic Talent
-                </span>
-                <span className="typewriter block border-r-2 border-trust-blue pr-1 bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent">
-                  Acquisition.
-                </span>
+                <span className="block bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent">Tax Advisory.</span>
+                <span className="block bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent">HR Architecture.</span>
+                <span className="typewriter block border-r-2 border-trust-blue pr-1 bg-gradient-to-r from-trust-blue via-brand-gold to-trust-blue bg-clip-text text-transparent">Talent Acquisition.</span>
               </h1>
 
               <p className="text-lg md:text-xl text-trust-blue/90 leading-relaxed max-w-lg">
                 Nigeria's regulatory and business landscapes are evolving rapidly.
                 From tightening tax enforcement to talent retention and workforce
-                governance, scaling requires absolute precision. We build the
-                financial, HR, and talent infrastructure that protects your
-                company, recruits top-tier professionals, and guarantees compliance.
+                governance, scaling requires absolute precision.
               </p>
             </motion.div>
 
-            <motion.div
-              variants={heroItem}
-              className="bg-white/80 backdrop-blur-sm border-l-4 border-brand-gold p-6 rounded-lg"
-            >
-              <p className="text-trust-blue font-semibold text-lg">The Trustline Promise:</p>
-              <p className="text-trust-blue/90 mt-2">
-                No shortcuts. No &quot;creative&quot; accounting. No paper-only HR.
-                Rigorous talent placement and legal compliance built to withstand scrutiny.
-              </p>
-            </motion.div>
+              <motion.div
+                variants={heroItem}
+                className="relative overflow-hidden rounded-xl border border-white/80 p-6 shadow-xl border-l-4 !border-l-brand-gold"
+              >
+                <GlassOverlay variant="light" withRefraction={true} />
+                <p className="text-trust-blue font-semibold text-lg relative z-10 flex items-center gap-2">
+                  <span className="inline-block w-2 h-2 rounded-full bg-brand-gold animate-pulse" />
+                  The Trustline Promise:
+                </p>
+                <p className="text-trust-blue/90 mt-2 relative z-10 leading-relaxed">
+                  No shortcuts. No &quot;creative&quot; accounting. No paper-only HR.
+                  We build stronger compliance, reduce regulatory exposure and
+                  create defensible business records.
+                </p>
+              </motion.div>
 
             <motion.div
               className="flex flex-col sm:flex-row gap-4"
@@ -119,12 +114,12 @@ export default function Hero() {
                 Book a Consultation
               </motion.a>
               <motion.a
-                href="#practice-areas"
+                href="/people-shield"
                 className={secondaryCtaClass}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Explore Practice Areas
+                Explore People Shield™
               </motion.a>
             </motion.div>
           </div>

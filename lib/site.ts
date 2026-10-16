@@ -7,7 +7,7 @@ export const PHONE_DISPLAY = '+234 706 686 8867';
 export const PHONE_E164 = '2347066868867';
 
 export const WHATSAPP_PREFILL_MESSAGE =
-  'Hello Trustline, I would like to inquire about tax compliance services.';
+  "Hello Trustline, I'd like to book an HR & Compliance Diagnostic for my business.";
 
 export function getWhatsAppUrl(message: string = WHATSAPP_PREFILL_MESSAGE): string {
   return `https://wa.me/${PHONE_E164}?text=${encodeURIComponent(message)}`;

@@ -10,22 +10,22 @@ const steps = [
   {
     number: '01',
     title: 'Briefing',
-    description: 'Contact us via WhatsApp or email to share your goals and timeline.',
+    description: "Reach us on WhatsApp or email. Tell us your goals, team size and timeline.",
   },
   {
     number: '02',
-    title: 'Assessment',
-    description: 'We review your income sources, filings, and tax history in detail.',
+    title: 'Diagnostic',
+    description: 'We assess your people systems, filings and structures and show you exactly where you stand.',
   },
   {
     number: '03',
     title: 'Agreement',
-    description: 'You receive a transparent fee structure—no hidden costs.',
+    description: 'You receive a transparent scope and fee—no hidden costs, no open-ended billing.',
   },
   {
     number: '04',
     title: 'Execution',
-    description: 'We file, process, and deliver your documentation with full accountability.',
+    description: 'We build, file and deliver—documented, provable and yours to keep.',
   },
 ];
 
@@ -41,10 +41,10 @@ export default function HowItWorks() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold text-trust-blue mb-4">
-            Your Path to Clearance
+            How Engagements Work
           </h2>
           <p className="text-trust-blue/90 max-w-2xl mx-auto">
-            A simple, transparent four-step process to get compliant
+            A simple, transparent four-step process from briefing to delivery.
           </p>
         </motion.div>
 
@@ -94,14 +94,14 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
         >
-          <p className="text-trust-blue/90 mb-6">Ready to get compliant? Let&apos;s talk.</p>
+          <p className="text-trust-blue/90 mb-6">Ready to start your Diagnostic?</p>
           <a
             href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block rounded-lg bg-trust-blue px-8 py-3 font-semibold text-white shadow-md transition-all duration-300 hover:bg-trust-blue/90 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-trust-blue focus:ring-offset-2"
           >
-            Start Your Journey
+            Start Your Diagnostic
           </a>
         </motion.div>
       </Container>
