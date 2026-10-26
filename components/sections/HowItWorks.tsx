@@ -5,103 +5,108 @@ import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import { getWhatsAppUrl } from '@/lib/site';
 import { staggerContainer, staggerItem } from '@/lib/animations';
+import { ArrowRight, Phone } from 'lucide-react';
 
 const steps = [
   {
     number: '01',
-    title: 'Briefing',
-    description: "Reach us on WhatsApp or email. Tell us your goals, team size and timeline.",
+    title: 'Initial Briefing',
+    description: 'Reach us via WhatsApp or email. Detail your current corporate goals, workforce headcount, and urgency timeline.',
   },
   {
     number: '02',
-    title: 'Diagnostic',
-    description: 'We assess your people systems, filings and structures and show you exactly where you stand.',
+    title: 'Diagnostic Audit',
+    description: 'We evaluate existing payroll schedules, PITA PAYE remittances, contracts, and policy handbooks to expose latent liabilities.',
   },
   {
     number: '03',
-    title: 'Agreement',
-    description: 'You receive a transparent scope and fee—no hidden costs, no open-ended billing.',
+    title: 'Clear Commercial Scope',
+    description: 'Receive a transparent statement of work and fixed fee structure—no hidden costs, no surprise retrospective charges.',
   },
   {
     number: '04',
-    title: 'Execution',
-    description: 'We build, file and deliver—documented, provable and yours to keep.',
+    title: 'Execution & Archival',
+    description: 'We construct, remediate, and file defensible records—stored securely in your HR Center workspace for 6-year audit defense.',
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <Section id="how-it-works" background="sky" spacing="lg">
+    <Section id="how-it-works" background="white" spacing="lg" className="bg-white py-20 lg:py-28 border-b border-slate-200/60">
       <Container size="xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.4 }}
+          className="text-center max-w-2xl mx-auto mb-16 space-y-3"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-trust-blue mb-4">
-            How Engagements Work
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-trust-blue text-xs font-semibold uppercase tracking-wider">
+            Structured Workflow
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-display font-semibold text-[#0F2942] tracking-[-0.03em] leading-tight">
+            How Client Engagements Work
           </h2>
-          <p className="text-trust-blue/90 max-w-2xl mx-auto">
-            A simple, transparent four-step process from briefing to delivery.
+          <p className="text-base text-slate-600 leading-relaxed tracking-[-0.015em]">
+            A disciplined, four-stage engagement cycle from initial brief to board-ready archival.
           </p>
         </motion.div>
 
         <motion.ol
-          className="relative flex flex-col gap-0 lg:flex-row lg:items-stretch lg:gap-4"
-          variants={staggerContainer(0.1)}
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          variants={staggerContainer(0.08, 0.05)}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <div
-            className="absolute left-[1.65rem] top-8 bottom-8 w-0.5 bg-gradient-to-b from-brand-gold via-trust-blue/40 to-brand-gold lg:hidden"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute top-[3.25rem] left-[12%] right-[12%] hidden h-0.5 bg-gradient-to-r from-brand-gold/30 via-brand-gold to-brand-gold/30 lg:block"
-            aria-hidden="true"
-          />
-
-          {steps.map((step, index) => (
+          {steps.map((step) => (
             <motion.li
               key={step.number}
               variants={staggerItem}
-              className="relative flex-1 list-none pb-10 last:pb-0 lg:pb-0"
+              className="list-none h-full"
             >
-              <article className="group relative h-full rounded-2xl border border-border-grey bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-gold hover:shadow-lg lg:mx-1">
-                <div className="flex items-start gap-4 lg:flex-col lg:items-center lg:text-center">
-                  <div className="relative z-10 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-trust-blue to-brand-gold font-display text-lg font-bold text-white shadow-md ring-4 ring-white">
+              <article className="h-full rounded-xl border border-slate-200/80 bg-slate-50/40 p-6 flex flex-col justify-between transition-all duration-200 hover:border-slate-300 hover:bg-white hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:-translate-y-0.5">
+                <div className="space-y-4">
+                  {/* Step Number Badge */}
+                  <div className="w-10 h-10 rounded-lg bg-trust-blue text-white flex items-center justify-center font-mono font-bold text-sm shadow-sm">
                     {step.number}
                   </div>
-                  <div className="space-y-2 pt-1 lg:pt-4">
-                    <h3 className="text-lg font-display font-semibold text-trust-blue group-hover:text-brand-gold transition-colors">
+
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-[#0F2942] tracking-[-0.02em]">
                       {step.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-trust-blue/90">{step.description}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed tracking-[-0.01em]">
+                      {step.description}
+                    </p>
                   </div>
+                </div>
+
+                <div className="pt-4 mt-4 border-t border-slate-200/50 text-[11px] font-mono text-slate-400">
+                  Stage {step.number} of 04
                 </div>
               </article>
             </motion.li>
           ))}
         </motion.ol>
 
+        {/* CTA Bar */}
         <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mt-14"
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
         >
-          <p className="text-trust-blue/90 mb-6">Ready to start your Diagnostic?</p>
           <a
             href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block rounded-lg bg-trust-blue px-8 py-3 font-semibold text-white shadow-md transition-all duration-300 hover:bg-trust-blue/90 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-trust-blue focus:ring-offset-2"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-trust-blue text-white font-semibold text-sm hover:bg-trust-blue/90 shadow-sm transition-all duration-200 hover:shadow"
           >
-            Start Your Diagnostic
+            <Phone className="w-4 h-4" />
+            <span>Schedule Initial Briefing via WhatsApp</span>
+            <ArrowRight className="w-4 h-4 ml-1" />
           </a>
         </motion.div>
       </Container>

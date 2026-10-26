@@ -34,7 +34,7 @@ import {
   calculateNigerianPayroll,
 } from '@/lib/hr-center';
 
-export default function HrCenterDashboard() {
+function HrCenterDashboardContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const companyQuery = searchParams.get('company');
@@ -828,3 +828,21 @@ export default function HrCenterDashboard() {
     </div>
   );
 }
+
+export default function HrCenterDashboard() {
+  return (
+    <React.Suspense
+      fallback={
+        <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+          <div className="flex items-center gap-3 text-trust-blue font-semibold">
+            <div className="w-5 h-5 border-2 border-trust-blue border-t-transparent rounded-full animate-spin" />
+            <span>Loading HR Center workspace...</span>
+          </div>
+        </div>
+      }
+    >
+      <HrCenterDashboardContent />
+    </React.Suspense>
+  );
+}
+

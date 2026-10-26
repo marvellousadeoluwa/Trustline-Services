@@ -13,9 +13,9 @@ const HR_CENTER_URL = '/hr/auth';
 const navLinkClass =
   'text-sm font-medium text-trust-blue hover:text-brand-gold transition-colors';
 
-const navLinks = [
-  { href: '/#who-we-serve', label: 'Who We Serve' },
-  { href: '/#practice-areas', label: 'Practice Areas' },
+const navLinks: { href: string; label: string; external?: boolean }[] = [
+  { href: '/#who-we-serve', label: 'Clients' },
+  { href: '/#practice-areas', label: 'Services' },
   { href: '/people-shield', label: 'People Shield™' },
   { href: '/recruitment', label: 'Recruitment' },
   { href: '/hr/auth', label: 'HR Center' },
@@ -27,8 +27,7 @@ export default function Header() {
   const [hrModalTab, setHrModalTab] = useState<'signup' | 'login'>('signup');
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-white/60 shadow-[0_4px_24px_0_rgba(0,51,102,0.05)] transition-all duration-300">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-white/40 to-transparent" style={{ filter: 'url(#glass-subtle)' }} />
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-[0_1px_4px_rgba(0,0,0,0.03)] transition-all duration-200">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main">
         <div className="flex items-center justify-between h-20 gap-4">
           <div className="flex-shrink-0 flex items-center gap-3 min-w-0">
@@ -86,11 +85,11 @@ export default function Header() {
               <DialogContent>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <a href="/" onClick={() => {}} className="flex items-center gap-3">
+                    <a href="/" onClick={() => { }} className="flex items-center gap-3">
                       <Image src={TrustlineLogo} alt="logo" width={32} height={32} className="h-8 w-8" />
                       <span className="font-display font-bold text-trust-blue">Trustline</span>
                     </a>
-                    <button onClick={() => {}} aria-label="Close" className="text-trust-blue"><X className="h-5 w-5" /></button>
+                    <button onClick={() => { }} aria-label="Close" className="text-trust-blue"><X className="h-5 w-5" /></button>
                   </div>
 
                   <div className="space-y-2">
@@ -130,7 +129,7 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
-            
+
             <div className="pt-2 flex flex-col gap-3">
               <a href="/login" className="block w-full text-center text-trust-blue font-semibold py-2 border border-gray-200 rounded-md">
                 Log In

@@ -1,200 +1,140 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
-import Card from '@/components/ui/Card';
-import GlassOverlay from '@/components/ui/GlassOverlay';
 import { staggerContainer, staggerItem } from '@/lib/animations';
+import { ArrowRight, ShieldCheck, FileSpreadsheet, Award, UserCheck, Layers, Landmark } from 'lucide-react';
 
 const services = [
   {
     number: '01',
+    icon: <ShieldCheck className="w-5 h-5 text-trust-blue" />,
     title: 'HR & Compliance Diagnostics',
     description:
       'A structured audit of payroll, remittances, contracts, policies and pay structure—delivered as a scored report with a prioritised remediation plan.',
     anchorId: 'diagnostics',
+    href: '/#contact',
   },
   {
     number: '02',
+    icon: <Layers className="w-5 h-5 text-trust-blue" />,
     title: 'HR Architecture & Design',
-    description: 'Grade structures, pay bands, employment contracts, handbooks and policy frameworks engineered to fit your culture.',
+    description:
+      'Grade structures, pay bands, employment contracts, handbooks and policy frameworks engineered to fit your culture and survive regulatory audits.',
     anchorId: 'hr-architecture',
+    href: '/#contact',
   },
   {
     number: '03',
+    icon: <Award className="w-5 h-5 text-trust-blue" />,
     title: 'Compensation & Reward Advisory',
-    description: 'Market benchmarking, salary structuring and pay-band optimisation to retain your best people.',
+    description:
+      'Nigerian market compensation benchmarking, salary structuring and pay-band optimisation to retain mission-critical talent.',
     anchorId: 'compensation-reward-advisory',
+    href: '/#contact',
   },
   {
     number: '04',
+    icon: <UserCheck className="w-5 h-5 text-trust-blue" />,
     title: 'Executive Search & Talent Acquisition',
-    description: 'End-to-end recruitment, vetting and onboarding of finance, HR and managerial professionals.',
+    description:
+      'End-to-end recruitment, background vetting and structured onboarding of finance, HR, executive and operational professionals.',
     anchorId: 'recruitment',
+    href: '/recruitment',
   },
   {
     number: '05',
-    title: 'People Shield™',
-    description: 'Continuous compliance monitoring, risk flagging and quarterly board-ready reporting.',
+    icon: <ShieldCheck className="w-5 h-5 text-brand-gold" />,
+    title: 'People Shield™ Continuous Protection',
+    description:
+      'Continuous workforce compliance monitoring, risk flagging, statutory regulatory updates, and quarterly board-ready audit reporting.',
     anchorId: 'people-shield',
+    href: '/people-shield',
   },
   {
     number: '06',
+    icon: <Landmark className="w-5 h-5 text-trust-blue" />,
     title: 'Payroll & Tax Compliance',
-    description: 'PAYE, Pension, NHF, NSITF, ITF and tax advisory—computed correctly, remitted on time and provable.',
+    description:
+      'PAYE (PITA), Pension Reform Act 2014, NHF, NSITF, ITF and tax advisory—computed correctly, remitted on time, and fully defensible.',
     anchorId: 'payroll-tax-compliance',
+    href: '/#contact',
   },
 ];
 
-const ServiceCard = ({ service }: { service: typeof services[0] }) => {
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isHovering) return;
-
-    const rect = e.currentTarget.getBoundingClientRect();
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const x = (e.clientY - rect.top - centerY) / 10;
-    const y = (centerX - (e.clientX - rect.left)) / 10;
-
-    setRotation({ x, y });
-  };
-
-  const handleMouseLeave = () => {
-    setRotation({ x: 0, y: 0 });
-    setIsHovering(false);
-  };
-
-  return (
-    <motion.div
-      id={service.anchorId}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: 0.1 }}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        perspective: '1000px',
-      }}
-      className="h-full"
-    >
-      <motion.div
-        style={{
-          transformStyle: 'preserve-3d' as any,
-        }}
-        animate={{
-          rotateX: rotation.x,
-          rotateY: rotation.y,
-        }}
-        transition={{
-          type: 'spring',
-          stiffness: 300,
-          damping: 30,
-        }}
-        className="h-full"
-      >
-        <div className="h-full rounded-2xl border border-white/80 p-6 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:border-brand-gold">
-          <GlassOverlay variant="light" withRefraction={true} />
-          {/* Animated left border accent */}
-          <motion.div
-            className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-brand-gold to-trust-blue"
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          />
-
-          {/* Shimmer overlay for 3D effect */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0"
-            animate={{
-              opacity: isHovering ? 0.1 : 0,
-              x: isHovering ? ['100%', '-100%'] : '100%',
-            }}
-            transition={{
-              duration: 2,
-              repeat: isHovering ? Infinity : 0,
-            }}
-            style={{ pointerEvents: 'none' }}
-          />
-
-          <div className="flex gap-6 relative z-10">
-            <div className="flex-shrink-0">
-              <motion.div
-                className="w-16 h-16 bg-gradient-to-br from-trust-blue to-brand-gold text-white rounded-lg flex items-center justify-center font-display font-bold text-xl shadow-lg"
-                animate={{
-                  scale: isHovering ? 1.15 : 1,
-                  rotate: isHovering ? 360 : 0,
-                }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 200,
-                  duration: 0.8,
-                }}
-                style={{
-                  transformStyle: 'preserve-3d' as any,
-                }}
-              >
-                {service.number}
-              </motion.div>
-            </div>
-            <div className="flex-1 space-y-3">
-              <motion.h3
-                className="text-xl font-display font-semibold text-trust-blue transition-colors"
-                animate={{
-                  color: isHovering ? '#C89A2B' : '#003366',
-                }}
-              >
-                {service.title}
-              </motion.h3>
-              <motion.p
-                className="text-trust-blue/80 text-sm leading-relaxed"
-                animate={{
-                  opacity: isHovering ? 1 : 0.9,
-                  x: isHovering ? 4 : 0,
-                }}
-              >
-                {service.description}
-              </motion.p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-};
-
 export default function ServicePillars() {
   return (
-    <Section id="practice-areas" background="white" spacing="lg">
+    <Section id="practice-areas" background="white" spacing="lg" className="bg-[#F9FAFB] py-20 lg:py-28 border-b border-slate-200/60">
       <Container size="xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-trust-blue mb-4">
-            How We Work: Diagnose. Build. Protect.
+        {/* Section Header */}
+        <div className="max-w-2xl mb-16 space-y-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-trust-blue text-xs font-semibold uppercase tracking-wider">
+            Practice Areas
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-display font-semibold text-[#0F2942] tracking-[-0.03em] leading-tight">
+            Specialized Practice Areas Built for Scrutiny
           </h2>
-        </motion.div>
+          <p className="text-base text-slate-600 leading-relaxed tracking-[-0.015em]">
+            From diagnostic audits to continuous monitoring and executive talent acquisition, our infrastructure shields your organization from risk.
+          </p>
+        </div>
 
+        {/* Modular Feature Cards Grid */}
         <motion.div
-          className="grid md:grid-cols-2 gap-6"
-          variants={staggerContainer(0.12)}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          variants={staggerContainer(0.08, 0.05)}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {services.map((service) => (
-            <ServiceCard key={service.number} service={service} />
+            <motion.div
+              key={service.number}
+              variants={staggerItem}
+              className="h-full"
+            >
+              <div
+                id={service.anchorId}
+                className="group h-full bg-white rounded-xl border border-slate-200/80 p-7 flex flex-col justify-between transition-all duration-200 hover:border-slate-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:-translate-y-0.5"
+              >
+                <div className="space-y-4">
+                  {/* Top Bar with Number & Icon */}
+                  <div className="flex items-center justify-between">
+                    <span className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center font-mono font-bold text-xs text-slate-600 group-hover:bg-blue-50 group-hover:text-trust-blue transition-colors">
+                      {service.number}
+                    </span>
+                    <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-200/60">
+                      {service.icon}
+                    </div>
+                  </div>
+
+                  {/* Title & Description */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-[#0F2942] group-hover:text-trust-blue transition-colors tracking-[-0.02em]">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed tracking-[-0.01em]">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Brex-style Link Arrow */}
+                <div className="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
+                  <a
+                    href={service.href}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 group-hover:text-trust-blue transition-colors"
+                  >
+                    <span>Learn more</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <span className="text-[11px] font-mono text-slate-400">
+                    Trustline Architecture
+                  </span>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </motion.div>
       </Container>

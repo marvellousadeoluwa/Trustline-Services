@@ -1,4 +1,5 @@
----
+\---
+
 version: alpha
 name: Brex
 slug: brex
@@ -7,218 +8,243 @@ extractedAt: "2026-05-22"
 description: "Precise intelligent-finance system with Brex orange actions, tight Inter typography, white modular product cards, muted enterprise neutrals, and screenshot-led finance workflows."
 
 colors:
-  primary: "#FF5900"
-  accent: "#FF5900"
-  accentHover: "#E65000"
-  accentPressed: "#CC4700"
-  ink: "#15191E"
-  body: "#33383F"
-  muted: "#60646C"
-  canvas: "#FCFCFD"
-  surface: "#FFFFFF"
-  surfaceAlt: "#F6F7F9"
-  border: "#E6E8EB"
-  borderStrong: "#C9CDD2"
-  link: "#15191E"
-  success: "#138A43"
-  warning: "#B35C00"
-  error: "#C92A2A"
-  brex-orange: "#FF5900"
-  soft-orange-surface: "#FFF3EC"
-  navy-ink: "#15191E"
-  graphite: "#33383F"
-  logo-gray: "#A5A9B1"
-  footerBg: "#15191E"
-  developerBg: "#FAFAFA"
-  on-primary: "#FFFFFF"
-  on-dark: "#FCFCFD"
+
+&#x20; primary: "#0F2942"
+
+&#x20; accent: "#0066CC"
+
+&#x20; accentHover: "#0052A3"
+
+&#x20; accentPressed: "#003D7A"
+
+&#x20; ink: "#111827"
+
+&#x20; body: "#374151"
+
+&#x20; muted: "#6B7280"
+
+&#x20; canvas: "#F9FAFB"
+
+&#x20; surface: "#FFFFFF"
+
+&#x20; surfaceAlt: "#F3F4F6"
+
+&#x20; border: "#E5E7EB"
+
+&#x20; borderStrong: "#D1D5DB"
+
+&#x20; link: "#0066CC"
+
+&#x20; success: "#059669"
+
+&#x20; warning: "#D97706"
+
+&#x20; error: "#DC2626"
+
+&#x20; trust-blue: "#0066CC"
+
+&#x20; soft-blue-surface: "#EFF6FF"
+
+&#x20; navy-ink: "#0F2942"
+
+&#x20; graphite: "#374151"
+
+&#x20; logo-gray: "#9CA3AF"
+
+&#x20; footerBg: "#0F2942"
+
+&#x20; developerBg: "#F9FAFB"
+
+&#x20; on-primary: "#FFFFFF"
+
+&#x20; on-dark: "#FFFFFF"
 
 typography:
-  display:
-    fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    fontSize: 72px
-    fontWeight: 600
-    lineHeight: 0.96
-    letterSpacing: "-0.04em"
-  hero:
-    fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    fontSize: 56px
-    fontWeight: 600
-    lineHeight: 1.02
-    letterSpacing: "-0.035em"
-  headline-lg:
-    fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    fontSize: 40px
-    fontWeight: 600
-    lineHeight: 1.08
-    letterSpacing: "-0.03em"
-  title-lg:
-    fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    fontSize: 32px
-    fontWeight: 600
-    lineHeight: 1.13
-    letterSpacing: "-0.025em"
-  title-md:
-    fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    fontSize: 24px
-    fontWeight: 600
-    lineHeight: 1.21
-    letterSpacing: "-0.02em"
-  title-sm:
-    fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    fontSize: 18px
-    fontWeight: 600
-    lineHeight: 1.28
-    letterSpacing: "-0.015em"
-  label:
-    fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    fontSize: 12px
-    fontWeight: 600
-    lineHeight: 1.33
-    letterSpacing: "0.02em"
-    textTransform: uppercase
-  button:
-    fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    fontSize: 14px
-    fontWeight: 600
-    lineHeight: 1.43
-    letterSpacing: "-0.01em"
-  body:
-    fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    fontSize: 16px
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "-0.02em"
-  caption:
-    fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    fontSize: 14px
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "-0.02em"
-  legal:
-    fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    fontSize: 12px
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "-0.01em"
-  pricing-display:
-    fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-    fontSize: 32px
-    fontWeight: 600
-    lineHeight: 1.13
-    letterSpacing: "-0.025em"
-  code:
-    fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
-    fontSize: 13px
-    fontWeight: 400
-    lineHeight: 1.54
-    letterSpacing: "0em"
+display:
+fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+fontSize: 72px
+fontWeight: 600
+lineHeight: 0.96
+letterSpacing: "-0.04em"
+hero:
+fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+fontSize: 56px
+fontWeight: 600
+lineHeight: 1.02
+letterSpacing: "-0.035em"
+headline-lg:
+fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+fontSize: 40px
+fontWeight: 600
+lineHeight: 1.08
+letterSpacing: "-0.03em"
+title-lg:
+fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+fontSize: 32px
+fontWeight: 600
+lineHeight: 1.13
+letterSpacing: "-0.025em"
+title-md:
+fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+fontSize: 24px
+fontWeight: 600
+lineHeight: 1.21
+letterSpacing: "-0.02em"
+title-sm:
+fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+fontSize: 18px
+fontWeight: 600
+lineHeight: 1.28
+letterSpacing: "-0.015em"
+label:
+fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+fontSize: 12px
+fontWeight: 600
+lineHeight: 1.33
+letterSpacing: "0.02em"
+textTransform: uppercase
+button:
+fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+fontSize: 14px
+fontWeight: 600
+lineHeight: 1.43
+letterSpacing: "-0.01em"
+body:
+fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+fontSize: 16px
+fontWeight: 400
+lineHeight: 1.5
+letterSpacing: "-0.02em"
+caption:
+fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+fontSize: 14px
+fontWeight: 400
+lineHeight: 1.5
+letterSpacing: "-0.02em"
+legal:
+fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+fontSize: 12px
+fontWeight: 400
+lineHeight: 1.5
+letterSpacing: "-0.01em"
+pricing-display:
+fontFamily: "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+fontSize: 32px
+fontWeight: 600
+lineHeight: 1.13
+letterSpacing: "-0.025em"
+code:
+fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+fontSize: 13px
+fontWeight: 400
+lineHeight: 1.54
+letterSpacing: "0em"
 
 rounded:
-  sm: 6px
-  md: 8px
-  lg: 12px
-  xl: 16px
-  pill: 9999px
+sm: 6px
+md: 8px
+lg: 12px
+xl: 16px
+pill: 9999px
 
 spacing:
-  xs: 8px
-  sm: 16px
-  md: 24px
-  lg: 32px
-  xl: 80px
-  section: 120px
+xs: 8px
+sm: 16px
+md: 24px
+lg: 32px
+xl: 80px
+section: 120px
 
 components:
-  button-primary:
-    backgroundColor: "{colors.primary}"
-    textColor: "{colors.on-primary}"
-    typography: "{typography.button}"
-    rounded: "{rounded.pill}"
-    padding: 12px 20px
-  button-primary-active:
-    backgroundColor: "{colors.accentPressed}"
-    textColor: "{colors.on-primary}"
-    rounded: "{rounded.pill}"
-  button-secondary:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.ink}"
-    borderColor: "{colors.border}"
-    typography: "{typography.button}"
-    rounded: "{rounded.pill}"
-    padding: 12px 20px
-  button-ghost:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink}"
-    typography: "{typography.button}"
-    rounded: "{rounded.pill}"
-    padding: 10px 12px
-  button-link-arrow:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink}"
-    typography: "{typography.button}"
-    rounded: "{rounded.sm}"
-    padding: 0px 0px
-  nav-shell:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.ink}"
-    typography: "{typography.button}"
-    height: 72px
-    padding: 0px 32px
-  announcement-bar:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.on-dark}"
-    typography: "{typography.caption}"
-    padding: 8px 16px
-  hero-media:
-    backgroundColor: "{colors.surfaceAlt}"
-    rounded: "{rounded.lg}"
-    overflow: hidden
-  feature-card:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.lg}"
-    padding: 32px
-    shadowHover: "0px 4px 16px rgba(0, 0, 0, 0.12)"
-  editorial-card:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.sm}"
-    padding: 0px
-  pricing-card:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.ink}"
-    borderColor: "{colors.border}"
-    rounded: "{rounded.lg}"
-    padding: 32px
-  metric-panel:
-    backgroundColor: "{colors.surfaceAlt}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.lg}"
-    padding: 32px
-  product-screenshot-panel:
-    backgroundColor: "{colors.surfaceAlt}"
-    rounded: "{rounded.lg}"
-    padding: 24px
-  input-field:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.ink}"
-    borderColor: "{colors.borderStrong}"
-    typography: "{typography.body}"
-    rounded: "{rounded.md}"
-    padding: 12px 14px
-  search-command:
-    backgroundColor: "{colors.surfaceAlt}"
-    textColor: "{colors.muted}"
-    borderColor: "{colors.border}"
-    typography: "{typography.caption}"
-    rounded: "{rounded.md}"
-    padding: 8px 12px
-  footer:
-    backgroundColor: "{colors.footerBg}"
-    textColor: "{colors.on-dark}"
-    typography: "{typography.caption}"
-    padding: 80px 32px
+button-primary:
+backgroundColor: "{colors.primary}"
+textColor: "{colors.on-primary}"
+typography: "{typography.button}"
+rounded: "{rounded.pill}"
+padding: 12px 20px
+button-primary-active:
+backgroundColor: "{colors.accentPressed}"
+textColor: "{colors.on-primary}"
+rounded: "{rounded.pill}"
+button-secondary:
+backgroundColor: "{colors.surface}"
+textColor: "{colors.ink}"
+borderColor: "{colors.border}"
+typography: "{typography.button}"
+rounded: "{rounded.pill}"
+padding: 12px 20px
+button-ghost:
+backgroundColor: "transparent"
+textColor: "{colors.ink}"
+typography: "{typography.button}"
+rounded: "{rounded.pill}"
+padding: 10px 12px
+button-link-arrow:
+backgroundColor: "transparent"
+textColor: "{colors.ink}"
+typography: "{typography.button}"
+rounded: "{rounded.sm}"
+padding: 0px 0px
+nav-shell:
+backgroundColor: "{colors.surface}"
+textColor: "{colors.ink}"
+typography: "{typography.button}"
+height: 72px
+padding: 0px 32px
+announcement-bar:
+backgroundColor: "{colors.ink}"
+textColor: "{colors.on-dark}"
+typography: "{typography.caption}"
+padding: 8px 16px
+hero-media:
+backgroundColor: "{colors.surfaceAlt}"
+rounded: "{rounded.lg}"
+overflow: hidden
+feature-card:
+backgroundColor: "{colors.surface}"
+textColor: "{colors.ink}"
+rounded: "{rounded.lg}"
+padding: 32px
+shadowHover: "0px 4px 16px rgba(0, 0, 0, 0.12)"
+editorial-card:
+backgroundColor: "{colors.surface}"
+textColor: "{colors.ink}"
+rounded: "{rounded.sm}"
+padding: 0px
+pricing-card:
+backgroundColor: "{colors.surface}"
+textColor: "{colors.ink}"
+borderColor: "{colors.border}"
+rounded: "{rounded.lg}"
+padding: 32px
+metric-panel:
+backgroundColor: "{colors.surfaceAlt}"
+textColor: "{colors.ink}"
+rounded: "{rounded.lg}"
+padding: 32px
+product-screenshot-panel:
+backgroundColor: "{colors.surfaceAlt}"
+rounded: "{rounded.lg}"
+padding: 24px
+input-field:
+backgroundColor: "{colors.surface}"
+textColor: "{colors.ink}"
+borderColor: "{colors.borderStrong}"
+typography: "{typography.body}"
+rounded: "{rounded.md}"
+padding: 12px 14px
+search-command:
+backgroundColor: "{colors.surfaceAlt}"
+textColor: "{colors.muted}"
+borderColor: "{colors.border}"
+typography: "{typography.caption}"
+rounded: "{rounded.md}"
+padding: 8px 12px
+footer:
+backgroundColor: "{colors.footerBg}"
+textColor: "{colors.on-dark}"
+typography: "{typography.caption}"
+padding: 80px 32px
 ---
 
 **Overview**
@@ -229,17 +255,17 @@ The brand has three visual modes. The marketing mode uses cinematic product imag
 
 Key Characteristics:
 
-- Tight Inter typography with negative tracking on almost every marketing text level.
-- Orange is concentrated in action and intelligence moments, not washed across backgrounds.
-- White cards on pale neutral canvases create hierarchy with subtle borders and hover shadows.
-- Product screenshots are hero assets, usually clipped to 12px radii and allowed to carry detail.
-- Navigation is sober and utility-first, with a black announcement bar above a white nav shell.
-- Rounded corners are controlled: 6px for editorial media, 8px for inputs, 12px for cards and product panels.
-- Copy is direct and operational: speed, control, AI automation, global spend, compliance.
+* Tight Inter typography with negative tracking on almost every marketing text level.
+* Orange is concentrated in action and intelligence moments, not washed across backgrounds.
+* White cards on pale neutral canvases create hierarchy with subtle borders and hover shadows.
+* Product screenshots are hero assets, usually clipped to 12px radii and allowed to carry detail.
+* Navigation is sober and utility-first, with a black announcement bar above a white nav shell.
+* Rounded corners are controlled: 6px for editorial media, 8px for inputs, 12px for cards and product panels.
+* Copy is direct and operational: speed, control, AI automation, global spend, compliance.
 
 **Colors**
 
-Primary & Action:
+Primary \& Action:
 
 `{colors.primary}` is Brex orange, the brand's strongest recognition color. Use it for the primary CTA, selected icon treatments, active states, and small moments that indicate motion, intelligence, or spend action.
 
@@ -257,7 +283,7 @@ Surfaces:
 
 `{colors.soft-orange-surface}` is an occasional supportive orange tint. Use it sparingly for AI badges or inline emphasis, never as a full-page wash.
 
-Neutrals & Text:
+Neutrals \& Text:
 
 `{colors.ink}` is the core headline and navigation color. It should carry nearly all high-priority text.
 
@@ -287,29 +313,29 @@ Brand-specific signatures:
 
 Brex uses Inter as the dominant type family, implemented as a variable font with font-feature settings and tight tracking. The type voice is modern, compact, and executive; it avoids ornamental display faces and relies on scale, weight, and spacing discipline.
 
-| Level | Size | Weight | Line Height | Letter Spacing | Use |
-|---|---:|---:|---:|---:|---|
-| `{typography.display}` | 72px | 600 | 0.96 | -0.04em | Oversized homepage or campaign statements |
-| `{typography.hero}` | 56px | 600 | 1.02 | -0.035em | Main page hero headlines |
-| `{typography.headline-lg}` | 40px | 600 | 1.08 | -0.03em | Section headlines |
-| `{typography.title-lg}` | 32px | 600 | 1.13 | -0.025em | Pricing amounts, major module titles |
-| `{typography.title-md}` | 24px | 600 | 1.21 | -0.02em | Feature-card titles and article cards |
-| `{typography.title-sm}` | 18px | 600 | 1.28 | -0.015em | Compact panels and submodules |
-| `{typography.label}` | 12px | 600 | 1.33 | 0.02em | Eyebrows and all-caps trust labels |
-| `{typography.button}` | 14px | 600 | 1.43 | -0.01em | Buttons, nav actions, inline CTAs |
-| `{typography.body}` | 16px | 400 | 1.5 | -0.02em | Paragraph copy and product explanations |
-| `{typography.caption}` | 14px | 400 | 1.5 | -0.02em | Metadata, captions, card descriptions |
-| `{typography.legal}` | 12px | 400 | 1.5 | -0.01em | Footnotes and regulatory copy |
-| `{typography.pricing-display}` | 32px | 600 | 1.13 | -0.025em | Plan prices and custom pricing labels |
-| `{typography.code}` | 13px | 400 | 1.54 | 0em | Developer portal examples and API snippets |
+|Level|Size|Weight|Line Height|Letter Spacing|Use|
+|-|-:|-:|-:|-:|-|
+|`{typography.display}`|72px|600|0.96|-0.04em|Oversized homepage or campaign statements|
+|`{typography.hero}`|56px|600|1.02|-0.035em|Main page hero headlines|
+|`{typography.headline-lg}`|40px|600|1.08|-0.03em|Section headlines|
+|`{typography.title-lg}`|32px|600|1.13|-0.025em|Pricing amounts, major module titles|
+|`{typography.title-md}`|24px|600|1.21|-0.02em|Feature-card titles and article cards|
+|`{typography.title-sm}`|18px|600|1.28|-0.015em|Compact panels and submodules|
+|`{typography.label}`|12px|600|1.33|0.02em|Eyebrows and all-caps trust labels|
+|`{typography.button}`|14px|600|1.43|-0.01em|Buttons, nav actions, inline CTAs|
+|`{typography.body}`|16px|400|1.5|-0.02em|Paragraph copy and product explanations|
+|`{typography.caption}`|14px|400|1.5|-0.02em|Metadata, captions, card descriptions|
+|`{typography.legal}`|12px|400|1.5|-0.01em|Footnotes and regulatory copy|
+|`{typography.pricing-display}`|32px|600|1.13|-0.025em|Plan prices and custom pricing labels|
+|`{typography.code}`|13px|400|1.54|0em|Developer portal examples and API snippets|
 
 Principles:
 
-- Track marketing text tighter as it gets larger; Brex headlines should feel compressed and precise.
-- Keep weights mostly 400 and 600. Avoid 700+ unless a product UI requires a compact status label.
-- Use uppercase labels only for short category or trust statements, never for long paragraphs.
-- Let product screenshots and data modules do visual work; type should stay direct and uncluttered.
-- Use monospace only in developer or API contexts, paired with the same neutral surface system.
+* Track marketing text tighter as it gets larger; Brex headlines should feel compressed and precise.
+* Keep weights mostly 400 and 600. Avoid 700+ unless a product UI requires a compact status label.
+* Use uppercase labels only for short category or trust statements, never for long paragraphs.
+* Let product screenshots and data modules do visual work; type should stay direct and uncluttered.
+* Use monospace only in developer or API contexts, paired with the same neutral surface system.
 
 **Layout**
 
@@ -319,7 +345,7 @@ Desktop layouts favor strong two-column or three-column compositions: copy besid
 
 Whitespace is controlled, not airy for its own sake. Brex pages leave enough room for enterprise confidence, but sections remain dense with proof points, product modules, and operational benefits. Avoid huge empty editorial spaces that detach the brand from financial utility.
 
-**Elevation & Depth**
+**Elevation \& Depth**
 
 Brex is mostly flat. Hierarchy comes from section bands, card boundaries, typography scale, and high-quality product imagery rather than heavy elevation.
 
@@ -341,7 +367,7 @@ Buttons:
 
 `{components.button-link-arrow}` is a signature Brex marketing link pattern. Use ink text with an arrow icon to signal exploration inside cards and feature sections.
 
-Cards & Containers:
+Cards \& Containers:
 
 `{components.hero-media}` frames the first-view product or campaign image. It should be large, screenshot-led, clipped to `{rounded.lg}`, and integrated into the composition rather than treated as decoration.
 
@@ -353,7 +379,7 @@ Cards & Containers:
 
 `{components.product-screenshot-panel}` holds screenshots of budgets, expenses, approvals, inboxes, or accounting workflows. Keep screenshots legible and use neutral panel backgrounds instead of decorative gradients.
 
-Inputs & Forms:
+Inputs \& Forms:
 
 `{components.input-field}` uses a white fill, 8px radius, and strong enough border to be visible on pale surfaces. Labels should use `{typography.caption}` or `{typography.label}` depending on density.
 
@@ -387,46 +413,46 @@ The developer portal pattern is documentation-first: left navigation, top API ta
 
 Do:
 
-- Use `{colors.primary}` for the one dominant action per viewport.
-- Set large headlines in `{typography.hero}` or `{typography.display}` with tight negative tracking.
-- Build feature surfaces with `{components.feature-card}` and 32px internal padding.
-- Clip product imagery with `{rounded.lg}` for screenshots and `{rounded.sm}` for editorial thumbnails.
-- Use `{components.button-link-arrow}` for secondary exploration instead of blue links.
-- Keep proof logos in `{colors.logo-gray}` or similarly muted treatments.
-- Use `{colors.surfaceAlt}` to group product modules without making them feel promotional.
-- Preserve the black announcement bar plus white navigation contrast on marketing pages.
+* Use `{colors.primary}` for the one dominant action per viewport.
+* Set large headlines in `{typography.hero}` or `{typography.display}` with tight negative tracking.
+* Build feature surfaces with `{components.feature-card}` and 32px internal padding.
+* Clip product imagery with `{rounded.lg}` for screenshots and `{rounded.sm}` for editorial thumbnails.
+* Use `{components.button-link-arrow}` for secondary exploration instead of blue links.
+* Keep proof logos in `{colors.logo-gray}` or similarly muted treatments.
+* Use `{colors.surfaceAlt}` to group product modules without making them feel promotional.
+* Preserve the black announcement bar plus white navigation contrast on marketing pages.
 
 Don't:
 
-- Do not flood sections with orange backgrounds; Brex orange is an action signal, not the page canvas.
-- Do not use blue SaaS link styling where `{colors.link}` and arrow CTAs are more accurate.
-- Do not add glassmorphism, glossy gradients, or heavy drop shadows.
-- Do not round every element into large soft blobs; most containers stop at `{rounded.lg}`.
-- Do not use playful illustration as the primary product proof; use screenshots and real workflow imagery.
-- Do not loosen headline tracking to 0em at large sizes; the compressed Inter voice is essential.
-- Do not make pricing cards visually unrelated to feature cards; they share the same modular system.
-- Do not hide finance details behind oversized marketing cards; Brex layouts should remain operational.
+* Do not flood sections with orange backgrounds; Brex orange is an action signal, not the page canvas.
+* Do not use blue SaaS link styling where `{colors.link}` and arrow CTAs are more accurate.
+* Do not add glassmorphism, glossy gradients, or heavy drop shadows.
+* Do not round every element into large soft blobs; most containers stop at `{rounded.lg}`.
+* Do not use playful illustration as the primary product proof; use screenshots and real workflow imagery.
+* Do not loosen headline tracking to 0em at large sizes; the compressed Inter voice is essential.
+* Do not make pricing cards visually unrelated to feature cards; they share the same modular system.
+* Do not hide finance details behind oversized marketing cards; Brex layouts should remain operational.
 
 **Responsive Behavior**
 
-| Breakpoint | Width | Behavior |
-|---|---:|---|
-| mobile-sm | 375px | Single-column stack, compressed nav, 24px page gutters |
-| mobile | 767px | Mobile logo size increases slightly, cards stack, hero media reorders |
-| tablet | 1023px | Two-column layouts begin collapsing, gutters around 32px |
-| desktop | 1024px | Full nav, multi-column card grids, larger media panels |
-| wide | 1280px | Centered max-width content, generous section rhythm |
-| max | 1440px | Preserve readable line lengths; do not stretch text columns |
+|Breakpoint|Width|Behavior|
+|-|-:|-|
+|mobile-sm|375px|Single-column stack, compressed nav, 24px page gutters|
+|mobile|767px|Mobile logo size increases slightly, cards stack, hero media reorders|
+|tablet|1023px|Two-column layouts begin collapsing, gutters around 32px|
+|desktop|1024px|Full nav, multi-column card grids, larger media panels|
+|wide|1280px|Centered max-width content, generous section rhythm|
+|max|1440px|Preserve readable line lengths; do not stretch text columns|
 
 Touch targets should be at least 44px high for buttons, nav toggles, dropdown triggers, search controls, and pricing CTAs. Even compact link-arrow actions need enough surrounding space to tap comfortably.
 
 Collapsing strategy:
 
-- Collapse nav into a mobile menu while preserving sign-in and primary CTA access.
-- Stack pricing cards vertically before comparison tables become cramped.
-- Let product screenshots move below copy on narrow screens unless the screenshot is the main hero proof.
-- Convert multi-card grids into one-column stacks with the same `{spacing.md}` gap.
-- Keep logo strips either horizontally scrollable or wrapped with muted marks and consistent spacing.
+* Collapse nav into a mobile menu while preserving sign-in and primary CTA access.
+* Stack pricing cards vertically before comparison tables become cramped.
+* Let product screenshots move below copy on narrow screens unless the screenshot is the main hero proof.
+* Convert multi-card grids into one-column stacks with the same `{spacing.md}` gap.
+* Keep logo strips either horizontally scrollable or wrapped with muted marks and consistent spacing.
 
 Image behavior:
 
@@ -450,3 +476,4 @@ Observed directly: homepage structure, top announcement and navigation content, 
 Derived conservatively: full type scale, semantic colors, input details, pricing-card borders, and several spacing tokens. These are inferred from repeated CSS fragments, page structure, and standard Brex component behavior rather than a public design-token file.
 
 Uncertain: exact production token names, every brand color used inside imagery, exact nav dropdown dimensions, form validation styling, and developer portal CSS variables. If a future extraction can access the bundled CSS and rendered screenshots, refine component measurements, full breakpoint rules, and any dark-mode or app-dashboard-specific tokens.
+

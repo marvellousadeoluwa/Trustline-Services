@@ -15,3 +15,23 @@ export function getWhatsAppUrl(message: string = WHATSAPP_PREFILL_MESSAGE): stri
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://trustlineprofessional.com';
+
+/** Google Preferred Source Configuration */
+export const GOOGLE_PREFERRED_CONFIG = {
+  searchQueryUrl: 'https://www.google.com/search?q=site%3Atrustlineprofessional.com+HR+tax+payroll+compliance+Nigeria',
+  googleNewsFollowUrl: 'https://news.google.com/publications/trustline-professional-services',
+  siteDomain: 'trustlineprofessional.com',
+};
+
+/**
+ * Hero Media Configuration
+ * Switch between 'interactive' (live terminal card), 'video' (MP4 / WebM), or 'gif'.
+ * To swap the video anytime, simply place your video file in /public/videos/ and update videoSrc below!
+ */
+export const HERO_MEDIA_CONFIG = {
+  type: 'interactive' as 'interactive' | 'video' | 'gif',
+  videoSrc: '/videos/hero-trustline.mp4',
+  posterSrc: '/images/hero-poster.png',
+  gifSrc: '/images/hero-preview.gif',
+  badge: 'Live Workforce & Compliance Engine',
+};

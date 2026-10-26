@@ -38,12 +38,34 @@ export async function updateSession(request: NextRequest) {
   // The PRD says "Block full dashboard access until the link is clicked."
   // Wait, the prompt says "A new user genuinely cannot reach any dashboard page before verifying their email"
 
+  // Subdomain & Multi-tenant HR Center Routing
+  const host = request.headers.get('host') || ''
+  const hostname = host.split(':')[0]
+  let hostSubdomain = ''
+  
+  if (hostname.endsWith('.trustlineprofessional.com')) {
+    hostSubdomain = hostname.replace('.trustlineprofessional.com', '')
+  } else if (hostname.endsWith('.localhost')) {
+    hostSubdomain = hostname.replace('.localhost', '')
+  }
+
+  // Handle custom host subdomain on root domain (e.g. apex.localhost:3000 -> /hr?company=apex)
+  if (hostSubdomain && !['www', 'api', 'admin', 'app', 'mail', 'test'].includes(hostSubdomain.toLowerCase())) {
+    if (request.nextUrl.pathname === '/') {
+      const hrUrl = request.nextUrl.clone()
+      hrUrl.pathname = '/hr'
+      hrUrl.searchParams.set('company', hostSubdomain.toLowerCase())
+      return NextResponse.rewrite(hrUrl)
+    }
+  }
+
   const isHrRoute = request.nextUrl.pathname.startsWith('/hr')
   const isHrAuthPage = request.nextUrl.pathname === '/hr/auth'
   const hasHrSession = !!request.cookies.get('trustline_hr_subdomain')?.value
+  const hasCompanyQuery = request.nextUrl.searchParams.has('company')
 
   if (isHrRoute && !isHrAuthPage) {
-    if (!user && !hasHrSession) {
+    if (!user && !hasHrSession && !hasCompanyQuery) {
       const authUrl = request.nextUrl.clone()
       authUrl.pathname = '/hr/auth'
       return NextResponse.redirect(authUrl)

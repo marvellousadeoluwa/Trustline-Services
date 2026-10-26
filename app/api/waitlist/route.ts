@@ -21,8 +21,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const { error } = await getSupabaseAdmin()
-      .from('waitlist_signups')
+    const { error } = await (getSupabaseAdmin()
+      .from('waitlist_signups') as any)
       .insert({ email });
 
     if (error) {

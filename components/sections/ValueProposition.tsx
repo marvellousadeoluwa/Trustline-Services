@@ -3,90 +3,86 @@
 import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
-import Card from '@/components/ui/Card';
-import GlassOverlay from '@/components/ui/GlassOverlay';
 import { staggerContainer, staggerItem } from '@/lib/animations';
+import { Shield, Scale, RefreshCw } from 'lucide-react';
 
 const valueProps = [
   {
-    icon: '🛡️',
+    icon: <Shield className="w-6 h-6 text-trust-blue" />,
     title: 'Institutional Grade Governance',
-    description: 'We are not a "one-man shop." We operate with structured internal governance, multi-layer reviews, and strict data privacy protocols.',
+    description:
+      'We are not a "one-man shop." We operate with structured internal governance, multi-layer technical reviews, and strict NDPA 2023 data protection protocols.',
   },
   {
-    icon: '⚖️',
+    icon: <Scale className="w-6 h-6 text-brand-gold" />,
     title: 'The Compliance-First Standard',
-    description: 'We strictly do not assist with tax evasion, document falsification, or under-declaration. We align your finances with the letter of the law.',
+    description:
+      'We strictly do not assist with tax evasion, document falsification, or under-declaration. We align your workforce and finances with the letter of Nigerian statutory law.',
   },
   {
-    icon: '🔄',
-    title: 'Continuity & Reliability',
-    description: 'Built on systems, not personalities. Your tax history is documented, archived, and secure, ensuring you are never left stranded.',
+    icon: <RefreshCw className="w-6 h-6 text-trust-blue" />,
+    title: 'Continuity & 6-Year Defensibility',
+    description:
+      'Built on institutional systems, not personalities. Your payroll computations and tax records are electronically archived and audit-ready for a minimum of 6 years.',
   },
 ];
 
 export default function ValueProposition() {
   return (
-    <Section id="value-proposition" background="sky" spacing="lg">
+    <Section id="value-proposition" background="white" spacing="lg" className="bg-white py-20 lg:py-28 border-b border-slate-200/60">
       <Container size="xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.4 }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-3"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-trust-blue mb-4">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-trust-blue text-xs font-semibold uppercase tracking-wider">
+            Our Standard
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-display font-semibold text-[#0F2942] tracking-[-0.03em] leading-tight">
             Compliance Without Compromise
           </h2>
-          <p className="text-lg text-trust-blue/80 max-w-3xl mx-auto">
-            Most "tax consultants" sell you a way to pay less by hiding the truth. We sell you the peace of mind that comes from doing it right.
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed tracking-[-0.015em]">
+            Most &quot;tax consultants&quot; sell you a way to pay less by hiding the truth. We build the peace of mind that comes from structured, legally defensible operations.
           </p>
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-3 gap-8"
-          variants={staggerContainer(0.12)}
+          className="grid md:grid-cols-3 gap-6 lg:gap-8"
+          variants={staggerContainer(0.08, 0.05)}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {valueProps.map((prop, index) => (
+          {valueProps.map((prop) => (
             <motion.div
               key={prop.title}
               variants={staggerItem}
+              className="h-full"
             >
-              <div className="h-full rounded-2xl border border-white/80 p-6 relative overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:border-brand-gold">
-                <GlassOverlay variant="frosted" withRefraction={true} />
-                {/* Animated background accent */}
-                <motion.div
-                  className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-brand-gold/15 opacity-0 blur-3xl group-hover:opacity-100 transition-opacity duration-300"
-                />
-
-                <motion.div
-                  className="space-y-4 relative z-10"
-                  whileHover={{ y: -5 }}
-                  transition={{ type: 'spring', stiffness: 200 }}
-                >
-                  {/* Icon Container - Animated */}
-                  <motion.div
-                    className="text-5xl inline-flex items-center justify-center w-16 h-16 rounded-lg bg-accent-sky"
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                  >
+              <div className="h-full rounded-xl border border-slate-200/80 bg-slate-50/50 p-8 flex flex-col justify-between transition-all duration-200 hover:border-slate-300 hover:bg-white hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:-translate-y-0.5">
+                <div className="space-y-4">
+                  {/* Icon Container */}
+                  <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/80 flex items-center justify-center shadow-sm">
                     {prop.icon}
-                  </motion.div>
+                  </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-display font-semibold text-trust-blue">
+                  <h3 className="text-xl font-semibold text-[#0F2942] tracking-[-0.02em]">
                     {prop.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-trust-blue/80">
+                  <p className="text-sm text-slate-600 leading-relaxed tracking-[-0.01em]">
                     {prop.description}
                   </p>
-                </motion.div>
+                </div>
+
+                <div className="pt-6 mt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-trust-blue">
+                  <span>Trustline Governance Guarantee</span>
+                </div>
               </div>
             </motion.div>
           ))}

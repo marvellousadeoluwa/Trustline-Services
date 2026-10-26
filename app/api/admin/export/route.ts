@@ -18,8 +18,13 @@ export async function GET() {
     return NextResponse.json({ error: 'Export failed' }, { status: 500 });
   }
 
+  interface WaitlistRecord {
+    email: string;
+    created_at: string;
+  }
+
   const headers = ['email', 'created_at'];
-  const rows = (data || []).map((r) => [
+  const rows = ((data as WaitlistRecord[] | null) || []).map((r) => [
     r.email,
     new Date(r.created_at).toISOString(),
   ]);

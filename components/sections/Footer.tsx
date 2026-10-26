@@ -11,6 +11,7 @@ import {
   getWhatsAppUrl,
   PHONE_DISPLAY,
 } from '@/lib/site';
+import GooglePreferredButton from '@/components/sections/GooglePreferredButton';
 
 const socialLinks = [
   { name: 'Facebook', href: 'https://web.facebook.com/profile.php?id=61588211663709', slug: 'facebook' },
@@ -98,8 +99,8 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="bg-trust-blue text-white relative">
-      <Section background="white" spacing="md" className="!bg-trust-blue !py-16">
+    <footer id="contact" className="bg-[#0F2942] text-white relative border-t border-white/10">
+      <Section background="white" spacing="md" className="!bg-[#0F2942] !py-20">
         <Container size="xl">
           <div className="grid md:grid-cols-4 gap-8 text-white">
             <div>
@@ -165,13 +166,12 @@ export default function Footer() {
               © 2026 Trustline Professional Services Ltd. All Rights Reserved.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+              <GooglePreferredButton variant="footer" />
               <a
-                href="https://hrcenter.trustlineprofessional.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/hr/auth"
                 className="text-sm font-medium text-white/90 underline-offset-4 hover:text-brand-gold hover:underline"
               >
-                HR Center
+                HR Center Portal
               </a>
             </div>
           </motion.div>
